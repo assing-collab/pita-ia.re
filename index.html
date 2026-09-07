@@ -82,7 +82,7 @@
       "provider": { "@id": "https://pita-ia.re/#organization" },
       "areaServed": { "@type": "AdministrativeArea", "name": "La Réunion" },
       "serviceType": "Création de site internet",
-      "description": "Sites vitrines, sites avec menu digital dynamique, e-commerce, tableaux de bord et outils métier sur mesure."
+      "description": "Sites vitrines, sites avec fonctionnalités, e-commerce, tableaux de bord et outils métier sur mesure."
     }
   ]
 }
@@ -261,6 +261,18 @@
     max-width: 560px;
   }
   .hero-cta{ margin-top: 40px; display:flex; gap:16px; flex-wrap:wrap; }
+  .hero-badges{
+    margin-top: 30px; display:flex; gap: 22px; flex-wrap: wrap;
+  }
+  .hero-badge{
+    display:flex; align-items:center; gap:8px;
+    font-family:'JetBrains Mono', monospace; font-size:12.5px;
+    color: var(--cream-dim); letter-spacing:.02em;
+  }
+  .hero-badge::before{
+    content:''; width:6px; height:6px; border-radius:50%;
+    background: var(--lime); flex-shrink:0;
+  }
   .btn-primary{
     background: var(--pink); color:#1a1a1a; font-weight:700;
     padding: 15px 28px; border-radius:100px; text-decoration:none; font-size:15px;
@@ -378,12 +390,14 @@
   .example-card{
     position: relative;
   }
+  .example-head{
+    display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+  }
   .example-badge{
-    position: absolute; top: 18px; right: 18px;
     background: var(--bg); border: 1px solid var(--line);
     color: var(--cream-dim); font-family:'JetBrains Mono', monospace;
     font-size: 10.5px; letter-spacing: .04em; text-transform: uppercase;
-    padding: 4px 10px; border-radius: 100px;
+    padding: 4px 10px; border-radius: 100px; white-space: nowrap; flex-shrink: 0;
   }
   .example-block{ margin-top: 16px; }
   .example-block .lbl{
@@ -899,7 +913,7 @@
         <button type="button" class="nav-trigger" data-nav-trigger>Services <span class="chev">▾</span></button>
         <div class="nav-dropdown">
           <a href="#svc-vitrine">Sites web professionnels</a>
-          <a href="#svc-menu-dynamique">Vitrine avec menu digital</a>
+          <a href="#svc-menu-dynamique">Site web avec fonctionnalités</a>
           <a href="#svc-ecommerce">Site e-commerce</a>
           <a href="#svc-dashboard">Tableaux de bord</a>
           <a href="#svc-outils-mesure">Outils métier sur mesure</a>
@@ -971,6 +985,12 @@
     <h1>Création de sites internet professionnels à La Réunion</h1>
     <p class="hero-tagline">Un site qui travaille pour votre entreprise, <em>pas juste une jolie vitrine</em>.</p>
     <p class="lead">Pita<strong style="color:var(--pink); font-weight:700;">IA</strong> conçoit des sites vitrines, des menus digitaux, des systèmes de commande, de l'e-commerce et des outils métier sur mesure pour les commerces et entreprises de La Réunion. Des solutions web conçues rapidement grâce à l'intelligence artificielle, avec un accompagnement humain et direct du premier échange à la mise en ligne.</p>
+    <div class="hero-badges">
+      <span class="hero-badge">Devis gratuit</span>
+      <span class="hero-badge">Démo avant paiement</span>
+      <span class="hero-badge">Mobile-first</span>
+      <span class="hero-badge">SEO inclus</span>
+    </div>
     <div class="hero-cta">
       <a href="#contact" class="btn-primary">Parler de mon projet →</a>
       <a href="#services" class="btn-ghost">Voir les solutions</a>
@@ -1021,11 +1041,11 @@
           <div class="preview">
             <img src="https://images.pexels.com/photos/12725448/pexels-photo-12725448.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Espace de commande en ligne pour restaurant à La Réunion" width="800" height="600" loading="lazy">
           </div>
-          <div class="tag">MENU DIGITAL</div>
-          <h3>Site web avec menu digital dynamique</h3>
-          <p>Vos clients doivent encore appeler pour commander ? Publiez votre menu ou catalogue vous-même, en quelques clics, et recevez les commandes directement par WhatsApp, email, ou dans un espace dédié.</p>
+          <div class="tag">FONCTIONNALITÉS</div>
+          <h3>Site web avec fonctionnalités</h3>
+          <p>Besoin de plus qu'une simple vitrine ? Prise de rendez-vous, commande en ligne, formulaire avancé — ajoutez la fonctionnalité dont votre activité a besoin pour que vos clients puissent agir directement depuis votre site.</p>
           <button type="button" class="more-toggle">En savoir plus +</button>
-          <div class="more-detail">Espace privé de gestion (sans code) pour publier menu/carte/catalogue, mise à jour immédiate sur le site, gestion des suppléments et options, tunnel de commande avec envoi automatique par WhatsApp, email ou, selon le projet, SMS, compatible produits multiples et variantes simples.</div>
+          <div class="more-detail">Espace privé de gestion (sans code) pour publier un menu, un catalogue ou gérer des disponibilités, mise à jour immédiate sur le site. Fonctionnalité adaptée à votre activité — réservation, commande en ligne, formulaire dédié — avec notifications par WhatsApp, email ou, selon le projet, SMS.</div>
           <button type="button" class="demo-link" data-demo="https://darling-rugelach-d055d9.netlify.app">Voir un exemple →</button>
         </div>
         <div class="service-card" id="svc-ecommerce">
@@ -1078,8 +1098,10 @@
     </div>
     <div class="examples-grid">
       <div class="service-card example-card">
-        <span class="example-badge">Démo fictive</span>
-        <div class="tag">RESTAURANT</div>
+        <div class="example-head">
+          <div class="tag">RESTAURANT</div>
+          <span class="example-badge">Démo fictive</span>
+        </div>
         <div class="example-block">
           <div class="lbl">Problème</div>
           <p>Les clients doivent appeler ou demander la carte pour commander.</p>
@@ -1092,8 +1114,10 @@
       </div>
 
       <div class="service-card example-card">
-        <span class="example-badge">Démo fictive</span>
-        <div class="tag">SALON DE COIFFURE</div>
+        <div class="example-head">
+          <div class="tag">SALON DE COIFFURE</div>
+          <span class="example-badge">Démo fictive</span>
+        </div>
         <div class="example-block">
           <div class="lbl">Problème</div>
           <p>Les rendez-vous sont gérés manuellement, par téléphone ou message.</p>
@@ -1106,8 +1130,10 @@
       </div>
 
       <div class="service-card example-card">
-        <span class="example-badge">Démo fictive</span>
-        <div class="tag">COMMERCE</div>
+        <div class="example-head">
+          <div class="tag">COMMERCE</div>
+          <span class="example-badge">Démo fictive</span>
+        </div>
         <div class="example-block">
           <div class="lbl">Problème</div>
           <p>Le site présente les produits sans permettre une vraie commande.</p>
@@ -1120,8 +1146,10 @@
       </div>
 
       <div class="service-card example-card">
-        <span class="example-badge">Démo fictive</span>
-        <div class="tag">ENTREPRISE</div>
+        <div class="example-head">
+          <div class="tag">ENTREPRISE</div>
+          <span class="example-badge">Démo fictive</span>
+        </div>
         <div class="example-block">
           <div class="lbl">Problème</div>
           <p>Les données de l'activité sont dispersées entre plusieurs fichiers ou outils.</p>
@@ -1130,7 +1158,6 @@
           <div class="lbl">Solution</div>
           <p>Tableau de bord personnalisé avec les indicateurs clés réunis au même endroit.</p>
         </div>
-        <a href="#svc-dashboard" class="example-cta">Découvrir le principe →</a>
       </div>
     </div>
   </div>
