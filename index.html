@@ -24,9 +24,10 @@
 <meta name="twitter:description" content="Création de sites internet professionnels à La Réunion : sites vitrines, e-commerce, menus digitaux et outils métier sur mesure avec PitaIA.">
 <meta name="twitter:image" content="https://pita-ia.re/og-image.jpg">
 
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152.png">
 
 <script defer src="https://cloud.umami.is/script.js" data-website-id="48f97ec3-2144-43fe-b9d8-1b62b687b634"></script>
 
@@ -173,7 +174,7 @@
     font-family:'Fraunces', serif; font-weight:700; font-size:22px;
     color: var(--cream);
   }
-  .logo svg{ width:26px; height:26px; }
+  .logo img{ width:32px; height:32px; border-radius:6px; }
   .logo .baseline{
     font-family:'Inter',sans-serif; font-weight:400; font-size:12.5px;
     color: var(--cream-dim); margin-left:12px; padding-left:12px;
@@ -813,30 +814,10 @@
     font-family:'Fraunces', serif; font-weight:700;
     font-size: 34px; color: var(--cream);
   }
-  .intro-logo svg{ width:44px; height:44px; overflow: visible; }
-
-  .intro-ring{
-    fill:none; stroke:#ec3a80; stroke-width:2;
-    stroke-dasharray: 119.4; stroke-dashoffset: 119.4;
-    animation: introDraw 0.4s ease-out forwards;
-  }
-  .intro-petal{
-    fill:#f4ecdf;
-    opacity:0; transform-origin: center;
-    transform: scale(0);
-    animation: introPetal 0.22s cubic-bezier(.34,1.56,.64,1) forwards;
-  }
-  .intro-petal:nth-child(2){ animation-delay: .25s; }
-  .intro-petal:nth-child(3){ animation-delay: .29s; }
-  .intro-petal:nth-child(4){ animation-delay: .33s; }
-  .intro-petal:nth-child(5){ animation-delay: .37s; }
-  .intro-petal:nth-child(6){ animation-delay: .41s; }
-  .intro-petal:nth-child(7){ animation-delay: .45s; }
-  .intro-core{
-    fill:#9bd045;
-    opacity:0; transform-origin: center; transform: scale(0);
-    animation: introCore 0.3s ease-out forwards;
-    animation-delay: .55s;
+  .intro-logo-img{
+    width:72px; height:72px; border-radius:16px;
+    opacity:0; transform: scale(0.5);
+    animation: introImgPop 0.5s cubic-bezier(.34,1.56,.64,1) forwards;
   }
   .intro-word span{
     display:inline-block; opacity:0;
@@ -844,18 +825,15 @@
     animation: introLetter 0.3s cubic-bezier(.22,1,.36,1) forwards;
   }
   .intro-word .ltr-pink{ color: var(--pink); }
-  .intro-word span:nth-child(1){ animation-delay: .65s; }
-  .intro-word span:nth-child(2){ animation-delay: .77s; }
-  .intro-word span:nth-child(3){ animation-delay: .89s; }
-  .intro-word span:nth-child(4){ animation-delay: 1.01s; }
-  .intro-word span:nth-child(5){ animation-delay: 1.13s; }
-  .intro-word span:nth-child(6){ animation-delay: 1.25s; }
+  .intro-word span:nth-child(1){ animation-delay: .50s; }
+  .intro-word span:nth-child(2){ animation-delay: .62s; }
+  .intro-word span:nth-child(3){ animation-delay: .74s; }
+  .intro-word span:nth-child(4){ animation-delay: .86s; }
+  .intro-word span:nth-child(5){ animation-delay: .98s; }
+  .intro-word span:nth-child(6){ animation-delay: 1.10s; }
 
   @keyframes introLetter{ to{ opacity:1; transform: translateY(0); } }
-
-  @keyframes introDraw{ to{ stroke-dashoffset: 0; } }
-  @keyframes introPetal{ to{ opacity:1; transform: scale(1); } }
-  @keyframes introCore{ 0%{opacity:0; transform:scale(0);} 65%{opacity:1; transform:scale(1.5);} 100%{opacity:1; transform:scale(1);} }
+  @keyframes introImgPop{ to{ opacity:1; transform: scale(1); } }
   @keyframes introCurtain{ to{ transform: translateY(-100%); visibility:hidden; } }
 
   @media (prefers-reduced-motion: reduce){
@@ -867,16 +845,7 @@
 
 <div class="intro-overlay" aria-hidden="true" id="introOverlay">
   <div class="intro-logo">
-    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-      <circle class="intro-ring" cx="20" cy="20" r="19"/>
-      <circle class="intro-petal" cx="20" cy="12" r="1.6"/>
-      <circle class="intro-petal" cx="26" cy="16" r="1.6"/>
-      <circle class="intro-petal" cx="27" cy="23" r="1.6"/>
-      <circle class="intro-petal" cx="20" cy="27" r="1.6"/>
-      <circle class="intro-petal" cx="13" cy="23" r="1.6"/>
-      <circle class="intro-petal" cx="14" cy="16" r="1.6"/>
-      <circle class="intro-core" cx="20" cy="20" r="2.2"/>
-    </svg>
+    <img class="intro-logo-img" src="logo-icon-200.png" alt="">
     <span class="intro-word"><span>P</span><span>i</span><span>t</span><span>a</span><span class="ltr-pink">I</span><span class="ltr-pink">A</span></span>
   </div>
 </div>
@@ -895,16 +864,7 @@
 <nav>
   <div class="wrap">
     <div class="logo">
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="19" fill="none" stroke="#ec3a80" stroke-width="2"/>
-        <circle cx="20" cy="12" r="1.6" fill="#f4ecdf"/>
-        <circle cx="26" cy="16" r="1.6" fill="#f4ecdf"/>
-        <circle cx="27" cy="23" r="1.6" fill="#f4ecdf"/>
-        <circle cx="20" cy="27" r="1.6" fill="#f4ecdf"/>
-        <circle cx="13" cy="23" r="1.6" fill="#f4ecdf"/>
-        <circle cx="14" cy="16" r="1.6" fill="#f4ecdf"/>
-        <circle cx="20" cy="20" r="2.2" fill="#9bd045"/>
-      </svg>
+      <img src="logo-nav.png" alt="Logo PitaIA" width="32" height="32">
       Pita<span style="color:var(--pink);">IA</span>
       <span class="baseline">Solutions numériques sur mesure</span>
     </div>
