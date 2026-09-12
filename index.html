@@ -554,6 +554,25 @@
   }
   .pricing-note.secondary{ margin-top:10px; opacity:.8; }
 
+  /* OPTIONS DISPONIBLES */
+  .addon-grid{
+    display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  }
+  .addon-card{
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 24px 22px; display:flex; flex-direction:column; gap:8px;
+  }
+  .addon-card h4{
+    font-family:'Fraunces', serif; font-weight:600; font-size:17px; color: var(--cream);
+  }
+  .addon-card p{ font-size:13px; color: var(--cream-dim); flex:1; }
+  .addon-card .addon-price{
+    font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:.05em;
+    text-transform:uppercase; color: var(--gold); margin-top:6px;
+  }
+  @media (max-width: 980px){ .addon-grid{ grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px){ .addon-grid{ grid-template-columns: 1fr; } }
+
   /* CTA post-tarifs */
   .helper-cta{
     margin-top: 60px; background: var(--card); border: 1px solid var(--line);
@@ -723,6 +742,7 @@
   .price-family:last-child{ margin-bottom: 0; }
   .pricing-grid-2{ grid-template-columns: repeat(2,1fr); max-width: 760px; margin: 0 auto; }
   .pricing-grid-1{ grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .pricing-grid-4{ grid-template-columns: repeat(4,1fr); }
   @media (max-width: 980px) and (min-width: 861px){
     .pricing-grid{ grid-template-columns: repeat(2, 1fr); }
   }
@@ -1142,11 +1162,28 @@
 
     <div class="price-family" id="price-site-web">
       <div class="family-label">Site web</div>
-      <div class="pricing-grid">
+      <div class="pricing-grid pricing-grid-4">
+        <div class="price-card">
+          <div class="ptag">LANDING</div>
+          <h3>Landing page</h3>
+          <div class="price"><span class="from">À partir de</span>490 € <span>unique</span></div>
+          <div class="price-pitch">Une page unique, pensée pour convertir sur un objectif précis.</div>
+          <p class="price-desc">Idéal pour promouvoir un produit, un événement ou une offre spécifique, avec un seul objectif : donner envie de passer à l'action.</p>
+          <ul class="feature-grid">
+            <li>1 page unique, design sur mesure</li>
+            <li>Version responsive (mobile, tablette, ordinateur)</li>
+            <li>Un seul appel à l'action clair (devis, contact, réservation...)</li>
+            <li>Nom de domaine et hébergement inclus</li>
+            <li>Certificat SSL et SEO de base</li>
+            <li>Mise en ligne incluse</li>
+          </ul>
+          <a href="#contact" class="btn-ghost">Créer ma landing page</a>
+        </div>
+
         <div class="price-card">
           <div class="ptag">VITRINE</div>
           <h3>Site vitrine</h3>
-          <div class="price"><span class="from">À partir de</span>790 € <span>unique</span></div>
+          <div class="price"><span class="from">À partir de</span>690 € <span>unique</span></div>
           <div class="price-pitch">Une présence professionnelle sur Internet, simplement.</div>
           <p class="price-desc">Idéal pour présenter votre activité, vos services et permettre à vos clients de vous trouver facilement en ligne.</p>
           <ul class="feature-grid">
@@ -1166,7 +1203,7 @@
           <div class="badge">RECOMMANDÉ</div>
           <div class="ptag">FONCTIONNALITÉS</div>
           <h3>Site avec fonctionnalités</h3>
-          <div class="price"><span class="from">À partir de</span>1 090 € <span>unique</span></div>
+          <div class="price"><span class="from">À partir de</span>890 € <span>unique</span></div>
           <div class="price-pitch">Un site qui fait plus que présenter votre activité.</div>
           <p class="price-desc">Ajoutez la fonctionnalité dont votre entreprise a besoin pour permettre à vos clients de réserver, commander ou effectuer une action directement en ligne.</p>
           <p class="price-examples">Coiffeur/institut → rendez-vous · Restaurant/snack → commande en ligne · Professionnel → réservation · Entreprise → formulaire dédié</p>
@@ -1202,6 +1239,32 @@
           </ul>
           <a href="#contact" class="btn-ghost">Créer ma boutique</a>
           <p class="price-mention">Le tarif final dépend du nombre de produits, des fonctionnalités et des besoins spécifiques de la boutique. Les abonnements et frais des plateformes e-commerce ou de paiement utilisées sont à la charge du client.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-family" id="price-options">
+      <div class="family-label">Options disponibles</div>
+      <div class="addon-grid">
+        <div class="addon-card">
+          <h4>Rédaction des pages</h4>
+          <p>Vous manquez de temps pour rédiger vos textes ? Je m'en charge avec vous, à partir de vos informations.</p>
+          <div class="addon-price">Sur devis</div>
+        </div>
+        <div class="addon-card">
+          <h4>Création ou amélioration du logo</h4>
+          <p>Un logo simple et cohérent avec votre identité, si vous n'en avez pas encore ou souhaitez le moderniser.</p>
+          <div class="addon-price">Sur devis</div>
+        </div>
+        <div class="addon-card">
+          <h4>Formulaire de devis avancé</h4>
+          <p>Un formulaire multi-champs pour qualifier une demande complexe avant votre premier échange avec le client.</p>
+          <div class="addon-price">Sur devis</div>
+        </div>
+        <div class="addon-card">
+          <h4>Système de prise de rendez-vous</h4>
+          <p>Réservation en ligne connectée à un calendrier, pour les activités avec plusieurs prestations ou employés.</p>
+          <div class="addon-price">Sur devis</div>
         </div>
       </div>
     </div>
@@ -1314,7 +1377,7 @@
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q">Combien coûte la création d'un site internet à La Réunion ?</div>
-        <div class="faq-a">Les tarifs démarrent à 790 € pour un site vitrine, 1 090 € pour un site avec fonctionnalités (réservation, commande en ligne...) et 1 500 € pour une boutique e-commerce. Un devis précis vous est toujours remis avant de commencer.</div>
+        <div class="faq-a">Les tarifs démarrent à 490 € pour une landing page, 690 € pour un site vitrine, 890 € pour un site avec fonctionnalités (réservation, commande en ligne...) et 1 500 € pour une boutique e-commerce. Un devis précis vous est toujours remis avant de commencer.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Le site est-il adapté aux smartphones ?</div>
