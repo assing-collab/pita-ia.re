@@ -55,6 +55,16 @@
   .logo{ display:flex; align-items:center; gap:10px; font-family:'Fraunces',serif; font-weight:700; font-size:22px; color:var(--cream); text-decoration:none; }
   .logo img{ width:26px; height:26px; }
   .btn-nav{ background:var(--pink); color:#1a1a1a; font-weight:600; padding:10px 18px; border-radius:100px; text-decoration:none; font-size:14px; }
+  .btn-back{
+    border:1px solid var(--line); color:var(--cream-dim); padding:9px 16px;
+    border-radius:100px; text-decoration:none; font-size:13.5px;
+    display:inline-flex; align-items:center; gap:7px; transition:color .2s, border-color .2s;
+  }
+  .btn-back:hover{ color:var(--cream); border-color:var(--cream-dim); }
+  .nav-actions{ display:flex; align-items:center; gap:12px; }
+  @media (max-width:560px){
+    .nav-actions .btn-nav{ display:none; }
+  }
 
   header.page-head{ padding:70px 0 20px; }
   header.page-head h1{ font-size:clamp(30px,4.6vw,48px); margin-top:16px; max-width:780px; }
@@ -185,7 +195,10 @@
       <img src="logo-nav.png" alt="Logo PitaIA" width="26" height="26" style="border-radius:5px;">
       Pita<span style="color:var(--pink);">IA</span>
     </a>
-    <a href="index.html#contact" class="btn-nav">Parler de mon projet</a>
+    <div class="nav-actions">
+      <a href="index.html" class="btn-back">← Accueil</a>
+      <a href="index.html#contact" class="btn-nav">Parler de mon projet</a>
+    </div>
   </div>
 </nav>
 
@@ -286,6 +299,9 @@
       <p>Décrivez-moi votre projet, je vous montre rapidement à quoi pourrait ressembler votre propre site.</p>
       <a href="index.html#contact" class="btn-primary">Parler de mon projet →</a>
     </div>
+    <p style="text-align:center; margin-top:28px;">
+      <a href="index.html" class="btn-back">← Retour à la page d'accueil</a>
+    </p>
   </div>
 </section>
 
