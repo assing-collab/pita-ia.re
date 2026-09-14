@@ -469,111 +469,6 @@
     flex: 1; width: 100%; border: none; background: #fff;
   }
 
-  /* CARROUSEL DEMOS */
-  .carousel-outer{ position: relative; margin-top: 10px; }
-  .carousel-track{
-    display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory;
-    padding: 10px 8vw 34px; scrollbar-width: none; -ms-overflow-style: none;
-  }
-  .carousel-track::-webkit-scrollbar{ display: none; }
-  .carousel-slide{ flex: 0 0 auto; width: min(520px, 78vw); scroll-snap-align: center; }
-  .slide-frame{
-    position: relative; border-radius: 16px; overflow: hidden;
-    border: 1px solid var(--line); background: var(--card); cursor: pointer;
-    transition: border-color .2s ease, transform .2s ease; outline: none;
-  }
-  .slide-frame:hover, .slide-frame:focus-visible{ border-color: var(--pink); transform: translateY(-4px); }
-  .slide-chrome{
-    display: flex; align-items: center; gap: 6px; padding: 11px 14px;
-    background: #1b1b1b; border-bottom: 1px solid var(--line);
-  }
-  .slide-chrome .dot{ width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .slide-chrome .chrome-url{
-    margin-left: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px;
-    color: var(--cream-dim); background: rgba(244,236,223,0.06); padding: 4px 10px;
-    border-radius: 100px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-  }
-  .frame-badge{
-    position: absolute; top: 50px; right: 12px; z-index: 2;
-    background: rgba(10,10,10,0.75); border: 1px solid var(--line); color: var(--cream-dim);
-    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .04em;
-    text-transform: uppercase; padding: 4px 9px; border-radius: 100px;
-  }
-  .slide-media{ position: relative; width: 100%; height: 340px; background: #0d0d0d; }
-  .slide-media iframe, .slide-media img{
-    width: 100%; height: 100%; border: 0; display: block; object-fit: cover; pointer-events: none;
-  }
-  .slide-caption{
-    margin-top: 14px; text-align: center; font-family: 'JetBrains Mono', monospace;
-    font-size: 12.5px; color: var(--cream-dim); letter-spacing: .02em;
-  }
-  .carousel-arrow{
-    position: absolute; top: 160px; z-index: 5;
-    width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line);
-    background: rgba(10,10,10,0.7); color: var(--cream); font-size: 20px;
-    display: flex; align-items: center; justify-content: center; cursor: pointer;
-    backdrop-filter: blur(4px);
-  }
-  .carousel-arrow:hover{ border-color: var(--pink); }
-  .carousel-arrow.prev{ left: 4px; }
-  .carousel-arrow.next{ right: 4px; }
-  @media (max-width: 760px){
-    .carousel-arrow{ display: none; }
-    .carousel-slide{ width: 86vw; }
-    .carousel-track{ padding: 10px 7vw 28px; gap: 16px; }
-    .slide-media{ height: 280px; }
-  }
-
-  /* MODALE GALERIE PLEIN ECRAN (demos carrousel uniquement) */
-  .gallery-modal{
-    position: fixed; inset: 0; z-index: 600; background: rgba(6,5,4,0.92);
-    display: flex; align-items: center; justify-content: center; padding: 20px;
-  }
-  .gallery-modal[hidden]{ display: none; }
-  .gallery-stage{
-    position: relative; width: min(1000px, 92vw); height: min(88vh, 900px);
-    background: var(--bg-soft); border: 1px solid var(--line); border-radius: 18px;
-    overflow: hidden; display: flex; flex-direction: column;
-  }
-  .gallery-chrome{
-    display: flex; align-items: center; gap: 8px; padding: 12px 16px;
-    background: #1b1b1b; border-bottom: 1px solid var(--line);
-  }
-  .gallery-chrome .dot{ width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
-  .gallery-chrome .chrome-url{
-    margin-left: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px;
-    color: var(--cream-dim); background: rgba(244,236,223,0.06); padding: 5px 12px;
-    border-radius: 100px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-  }
-  .gallery-badge{
-    font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .04em;
-    text-transform: uppercase; color: var(--cream-dim); border: 1px solid var(--line);
-    padding: 4px 10px; border-radius: 100px; flex-shrink: 0;
-  }
-  #galleryFrame, #galleryImage{ flex: 1; width: 100%; border: none; background: #fff; object-fit: contain; }
-  .gallery-close{
-    position: absolute; top: 22px; right: 22px; z-index: 5;
-    width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line);
-    background: rgba(10,10,10,0.6); color: var(--cream); font-size: 18px; cursor: pointer;
-  }
-  .gallery-close:hover{ border-color: var(--pink); }
-  .gallery-arrow{
-    position: absolute; top: 50%; transform: translateY(-50%); z-index: 5;
-    width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--line);
-    background: rgba(10,10,10,0.6); color: var(--cream); font-size: 24px; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .gallery-arrow:hover{ border-color: var(--pink); }
-  .gallery-arrow.prev{ left: 18px; }
-  .gallery-arrow.next{ right: 18px; }
-  @media (max-width: 760px){
-    .gallery-stage{ width: 100vw; height: 100vh; border-radius: 0; }
-    .gallery-arrow{ width: 42px; height: 42px; font-size: 20px; }
-    .gallery-arrow.prev{ left: 6px; }
-    .gallery-arrow.next{ right: 6px; }
-    .gallery-close{ top: 10px; right: 10px; }
-  }
-
   /* PROCESS */
   .process{
     display:grid; grid-template-columns: repeat(5,1fr); gap: 0;
@@ -1011,14 +906,7 @@
           <a href="#price-sur-mesure">Sur mesure</a>
         </div>
       </div>
-      <div class="nav-item" data-nav-item>
-        <button type="button" class="nav-trigger" data-nav-trigger>Modèles <span class="chev">▾</span></button>
-        <div class="nav-dropdown">
-          <button type="button" class="demo-link" data-demo="https://darling-rugelach-d055d9.netlify.app">🍽️ Menu digital — restaurant</button>
-          <button type="button" class="demo-link" data-demo="https://magnificent-pothos-8e05f0.netlify.app">🏄 Site vitrine — école de surf</button>
-          <button type="button" class="demo-link" data-demo="https://transcendent-pony-9c8654.netlify.app">💇 Prise de rendez-vous — salon de coiffure</button>
-        </div>
-      </div>
+      <a class="navlink" href="creation-site-web-reunion.html">Démonstrations</a>
       <a class="navlink" href="faq.html">FAQ</a>
     </div>
     <button type="button" class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
@@ -1029,7 +917,7 @@
     <a class="mobile-menu-link" href="#services">Services</a>
     <a class="mobile-menu-link" href="services.html">Services (détail)</a>
     <a class="mobile-menu-link" href="#tarifs">Tarifs</a>
-    <a class="mobile-menu-link" href="#exemples">Modèles</a>
+    <a class="mobile-menu-link" href="creation-site-web-reunion.html">Démonstrations</a>
     <a class="mobile-menu-link" href="faq.html">FAQ</a>
     <a class="mobile-menu-link mobile-menu-cta" href="#contact">Parler de mon projet →</a>
   </div>
@@ -1167,85 +1055,14 @@
   </div>
 </section>
 
-<section id="exemples">
+<section id="exemples" class="alt-bg">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Exemples de projets</div>
-      <h2>Découvrez nos créations</h2>
-      <p>Quelques exemples de sites que PitaIA peut créer pour votre activité — démonstrations fictives, pas des projets de clients réels.</p>
+    <div class="helper-cta">
+      <div class="eyebrow" style="justify-content:center;">Exemples de projets</div>
+      <h3 style="margin-top:14px;">Découvrez nos créations en action</h3>
+      <p>Restaurant, salon de coiffure, commerce, tableau de bord — des démonstrations concrètes de ce que PitaIA peut créer pour votre activité.</p>
+      <a href="creation-site-web-reunion.html" class="btn-primary">Voir nos démonstrations →</a>
     </div>
-  </div>
-
-  <div class="carousel-outer">
-    <button type="button" class="carousel-arrow prev" data-dir="-1" aria-label="Démo précédente">‹</button>
-    <div class="carousel-track" id="demoCarousel" role="list">
-
-      <div class="carousel-slide" role="listitem">
-        <div class="slide-frame" tabindex="0" role="button" data-index="0" aria-label="Ouvrir en plein écran : démo Restaurant, menu digital">
-          <div class="slide-chrome">
-            <span class="dot" style="background:#ec3a80"></span>
-            <span class="dot" style="background:#d1a441"></span>
-            <span class="dot" style="background:#9bd045"></span>
-            <span class="chrome-url">darling-rugelach-d055d9.netlify.app</span>
-          </div>
-          <span class="frame-badge">Démo fictive</span>
-          <div class="slide-media">
-            <iframe src="https://darling-rugelach-d055d9.netlify.app" title="Aperçu démo Restaurant — menu digital" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
-          </div>
-        </div>
-        <div class="slide-caption">Restaurant · Menu digital</div>
-      </div>
-
-      <div class="carousel-slide" role="listitem">
-        <div class="slide-frame" tabindex="0" role="button" data-index="1" aria-label="Ouvrir en plein écran : démo Salon de coiffure, prise de rendez-vous">
-          <div class="slide-chrome">
-            <span class="dot" style="background:#ec3a80"></span>
-            <span class="dot" style="background:#d1a441"></span>
-            <span class="dot" style="background:#9bd045"></span>
-            <span class="chrome-url">transcendent-pony-9c8654.netlify.app</span>
-          </div>
-          <span class="frame-badge">Démo fictive</span>
-          <div class="slide-media">
-            <iframe src="https://transcendent-pony-9c8654.netlify.app" title="Aperçu démo Salon de coiffure — prise de rendez-vous" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
-          </div>
-        </div>
-        <div class="slide-caption">Salon de coiffure · Prise de rendez-vous</div>
-      </div>
-
-      <div class="carousel-slide" role="listitem">
-        <div class="slide-frame" tabindex="0" role="button" data-index="2" aria-label="Ouvrir en plein écran : démo Commerce, vitrine avec catalogue">
-          <div class="slide-chrome">
-            <span class="dot" style="background:#ec3a80"></span>
-            <span class="dot" style="background:#d1a441"></span>
-            <span class="dot" style="background:#9bd045"></span>
-            <span class="chrome-url">magnificent-pothos-8e05f0.netlify.app</span>
-          </div>
-          <span class="frame-badge">Démo fictive</span>
-          <div class="slide-media">
-            <iframe src="https://magnificent-pothos-8e05f0.netlify.app" title="Aperçu démo Commerce — vitrine avec catalogue" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
-          </div>
-        </div>
-        <div class="slide-caption">Commerce · Vitrine avec catalogue</div>
-      </div>
-
-      <div class="carousel-slide" role="listitem">
-        <div class="slide-frame" tabindex="0" role="button" data-index="3" aria-label="Ouvrir en plein écran : aperçu Entreprise, tableau de bord">
-          <div class="slide-chrome">
-            <span class="dot" style="background:#ec3a80"></span>
-            <span class="dot" style="background:#d1a441"></span>
-            <span class="dot" style="background:#9bd045"></span>
-            <span class="chrome-url">aperçu — tableau de bord</span>
-          </div>
-          <span class="frame-badge">Démo fictive</span>
-          <div class="slide-media">
-            <img src="dashboard-mockup.jpg" alt="Aperçu d'un tableau de bord personnalisé" loading="lazy">
-          </div>
-        </div>
-        <div class="slide-caption">Entreprise · Tableau de bord</div>
-      </div>
-
-    </div>
-    <button type="button" class="carousel-arrow next" data-dir="1" aria-label="Démo suivante">›</button>
   </div>
 </section>
 
@@ -1727,23 +1544,6 @@
   </div>
 </div>
 
-<div class="gallery-modal" id="galleryModal" hidden>
-  <div class="gallery-stage">
-    <div class="gallery-chrome">
-      <span class="dot" style="background:#ec3a80"></span>
-      <span class="dot" style="background:#d1a441"></span>
-      <span class="dot" style="background:#9bd045"></span>
-      <span class="chrome-url" id="galleryUrl"></span>
-      <span class="gallery-badge">Démo fictive</span>
-    </div>
-    <iframe id="galleryFrame" src="" title="Démo en plein écran"></iframe>
-    <img id="galleryImage" src="" alt="" hidden>
-  </div>
-  <button type="button" class="gallery-close" id="galleryClose" aria-label="Fermer l'aperçu">✕</button>
-  <button type="button" class="gallery-arrow prev" id="galleryPrev" aria-label="Démo précédente">‹</button>
-  <button type="button" class="gallery-arrow next" id="galleryNext" aria-label="Démo suivante">›</button>
-</div>
-
 <footer>
   <div class="wrap">
     <div class="footer-cta-line">
@@ -1794,78 +1594,6 @@
   });
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape' && !demoModal.hidden) closeDemoModal();
-  });
-
-  /* ---- Carrousel + galerie plein écran (section Exemples de projets) ---- */
-  var demoGallery = [
-    { title: 'darling-rugelach-d055d9.netlify.app', url: 'https://darling-rugelach-d055d9.netlify.app', type: 'iframe' },
-    { title: 'transcendent-pony-9c8654.netlify.app', url: 'https://transcendent-pony-9c8654.netlify.app', type: 'iframe' },
-    { title: 'magnificent-pothos-8e05f0.netlify.app', url: 'https://magnificent-pothos-8e05f0.netlify.app', type: 'iframe' },
-    { title: 'aperçu — tableau de bord', url: 'dashboard-mockup.jpg', type: 'image' }
-  ];
-  var galleryModal = document.getElementById('galleryModal');
-  var galleryFrame = document.getElementById('galleryFrame');
-  var galleryImage = document.getElementById('galleryImage');
-  var galleryUrlEl = document.getElementById('galleryUrl');
-  var galleryIndex = 0;
-
-  function renderGallerySlide(){
-    var d = demoGallery[galleryIndex];
-    galleryUrlEl.textContent = d.title;
-    if (d.type === 'iframe'){
-      galleryImage.hidden = true; galleryImage.src = '';
-      galleryFrame.hidden = false; galleryFrame.src = d.url;
-    } else {
-      galleryFrame.hidden = true; galleryFrame.src = '';
-      galleryImage.hidden = false; galleryImage.src = d.url; galleryImage.alt = d.title;
-    }
-  }
-  function openGallery(i){
-    galleryIndex = i;
-    renderGallerySlide();
-    galleryModal.hidden = false;
-    document.body.style.overflow = 'hidden';
-  }
-  function closeGallery(){
-    galleryModal.hidden = true;
-    galleryFrame.src = ''; galleryImage.src = '';
-    document.body.style.overflow = '';
-  }
-  function galleryStep(dir){
-    galleryIndex = (galleryIndex + dir + demoGallery.length) % demoGallery.length;
-    renderGallerySlide();
-  }
-  document.querySelectorAll('.slide-frame').forEach(function(el){
-    el.addEventListener('click', function(){ openGallery(parseInt(el.getAttribute('data-index'), 10)); });
-    el.addEventListener('keydown', function(e){
-      if (e.key === 'Enter' || e.key === ' '){
-        e.preventDefault();
-        openGallery(parseInt(el.getAttribute('data-index'), 10));
-      }
-    });
-  });
-  document.getElementById('galleryPrev').addEventListener('click', function(){ galleryStep(-1); });
-  document.getElementById('galleryNext').addEventListener('click', function(){ galleryStep(1); });
-  document.getElementById('galleryClose').addEventListener('click', closeGallery);
-  galleryModal.addEventListener('click', function(e){
-    if (e.target === galleryModal) closeGallery();
-  });
-  document.addEventListener('keydown', function(e){
-    if (galleryModal.hidden) return;
-    if (e.key === 'Escape') closeGallery();
-    if (e.key === 'ArrowLeft') galleryStep(-1);
-    if (e.key === 'ArrowRight') galleryStep(1);
-  });
-
-  document.querySelectorAll('.carousel-arrow').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var dir = parseInt(btn.getAttribute('data-dir'), 10);
-      var track = document.getElementById('demoCarousel');
-      var slide = track.querySelector('.carousel-slide');
-      var gap = 24;
-      var step = slide ? slide.getBoundingClientRect().width + gap : 300;
-      track.scrollBy({ left: dir * step, behavior: 'smooth' });
-    });
   });
 
   var navItems = document.querySelectorAll('[data-nav-item]');

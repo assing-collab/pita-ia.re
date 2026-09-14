@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Création de site web à La Réunion | PitaIA</title>
+<meta name="robots" content="index, follow">
+<meta name="description" content="Découvrez des exemples concrets de sites créés par PitaIA pour des commerces et entreprises de La Réunion : restaurant, salon de coiffure, boutique, tableau de bord.">
+<link rel="canonical" href="https://pita-ia.re/creation-site-web-reunion.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PitaIA">
+<meta property="og:title" content="Création de site web à La Réunion | PitaIA">
+<meta property="og:description" content="Découvrez des exemples concrets de sites créés par PitaIA pour des commerces et entreprises de La Réunion.">
+<meta property="og:url" content="https://pita-ia.re/creation-site-web-reunion.html">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://pita-ia.re/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152.png">
+
+<link rel="preload" href="./fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+  @font-face{ font-family:'Fraunces'; font-style:normal; font-weight:100 900; font-display:swap;
+    src:url('./fonts/fraunces-latin.woff2') format('woff2-variations'), url('./fonts/fraunces-latin.woff2') format('woff2'); }
+  @font-face{ font-family:'Inter'; font-style:normal; font-weight:100 900; font-display:swap;
+    src:url('./fonts/inter-latin.woff2') format('woff2-variations'), url('./fonts/inter-latin.woff2') format('woff2'); }
+  @font-face{ font-family:'JetBrains Mono'; font-style:normal; font-weight:100 800; font-display:swap;
+    src:url('./fonts/jetbrains-mono-latin.woff2') format('woff2-variations'), url('./fonts/jetbrains-mono-latin.woff2') format('woff2'); }
+
+  :root{
+    --bg:#0a0a0a; --bg-soft:#121212; --card:#161616;
+    --cream:#f4ecdf; --cream-dim:#cfc4b2;
+    --pink:#ec3a80; --pink-dim:#7a2144;
+    --lime:#9bd045; --gold:#d1a441;
+    --line:rgba(244,236,223,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--bg); color:var(--cream); font-family:'Inter',sans-serif; line-height:1.5; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  .wrap{ max-width:1100px; margin:0 auto; padding:0 28px; }
+  h1,h2{ font-family:'Fraunces',serif; font-weight:600; letter-spacing:-0.01em; }
+  .eyebrow{ font-family:'JetBrains Mono',monospace; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--pink); display:flex; align-items:center; gap:10px; }
+  .eyebrow::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--pink); box-shadow:0 0 0 3px var(--pink-dim); }
+
+  nav{ position:sticky; top:0; z-index:50; background:rgba(10,10,10,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:76px; }
+  .logo{ display:flex; align-items:center; gap:10px; font-family:'Fraunces',serif; font-weight:700; font-size:22px; color:var(--cream); text-decoration:none; }
+  .logo img{ width:26px; height:26px; }
+  .btn-nav{ background:var(--pink); color:#1a1a1a; font-weight:600; padding:10px 18px; border-radius:100px; text-decoration:none; font-size:14px; }
+
+  header.page-head{ padding:70px 0 20px; }
+  header.page-head h1{ font-size:clamp(30px,4.6vw,48px); margin-top:16px; max-width:780px; }
+  header.page-head p{ margin-top:16px; color:var(--cream-dim); font-size:16.5px; max-width:640px; }
+
+  section{ padding:20px 0 90px; }
+  .section-head{ max-width:620px; margin-bottom:20px; }
+
+  .final-cta{ background:var(--card); border:1px solid var(--line); border-radius:22px; padding:50px; text-align:center; }
+  .final-cta h2{ font-size:clamp(24px,3.2vw,32px); color:var(--cream); }
+  .final-cta p{ margin-top:10px; color:var(--cream-dim); font-size:15px; }
+  .btn-primary{ background:var(--pink); color:#1a1a1a; font-weight:700; padding:14px 26px; border-radius:100px; text-decoration:none; font-size:14.5px; display:inline-flex; align-items:center; gap:8px; margin-top:22px; }
+
+  footer{ border-top:1px solid var(--line); padding:30px 0; }
+  footer .wrap{ display:flex; justify-content:space-between; align-items:center; color:var(--cream-dim); font-size:13px; flex-wrap:wrap; gap:12px; }
+
+  /* CARROUSEL DEMOS (repris tel quel de la page d'accueil) */
+  .carousel-outer{ position: relative; margin-top: 10px; }
+  .carousel-track{
+    display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory;
+    padding: 10px 8vw 34px; scrollbar-width: none; -ms-overflow-style: none;
+  }
+  .carousel-track::-webkit-scrollbar{ display: none; }
+  .carousel-slide{ flex: 0 0 auto; width: min(520px, 78vw); scroll-snap-align: center; }
+  .slide-frame{
+    position: relative; border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--line); background: var(--card); cursor: pointer;
+    transition: border-color .2s ease, transform .2s ease; outline: none;
+  }
+  .slide-frame:hover, .slide-frame:focus-visible{ border-color: var(--pink); transform: translateY(-4px); }
+  .slide-chrome{
+    display: flex; align-items: center; gap: 6px; padding: 11px 14px;
+    background: #1b1b1b; border-bottom: 1px solid var(--line);
+  }
+  .slide-chrome .dot{ width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .slide-chrome .chrome-url{
+    margin-left: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--cream-dim); background: rgba(244,236,223,0.06); padding: 4px 10px;
+    border-radius: 100px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .frame-badge{
+    position: absolute; top: 50px; right: 12px; z-index: 2;
+    background: rgba(10,10,10,0.75); border: 1px solid var(--line); color: var(--cream-dim);
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .04em;
+    text-transform: uppercase; padding: 4px 9px; border-radius: 100px;
+  }
+  .slide-media{ position: relative; width: 100%; height: 340px; background: #0d0d0d; }
+  .slide-media iframe, .slide-media img{
+    width: 100%; height: 100%; border: 0; display: block; object-fit: cover; pointer-events: none;
+  }
+  .slide-caption{
+    margin-top: 14px; text-align: center; font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px; color: var(--cream-dim); letter-spacing: .02em;
+  }
+  .carousel-arrow{
+    position: absolute; top: 160px; z-index: 5;
+    width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line);
+    background: rgba(10,10,10,0.7); color: var(--cream); font-size: 20px;
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+    backdrop-filter: blur(4px);
+  }
+  .carousel-arrow:hover{ border-color: var(--pink); }
+  .carousel-arrow.prev{ left: 4px; }
+  .carousel-arrow.next{ right: 4px; }
+  @media (max-width: 760px){
+    .carousel-arrow{ display: none; }
+    .carousel-slide{ width: 86vw; }
+    .carousel-track{ padding: 10px 7vw 28px; gap: 16px; }
+    .slide-media{ height: 280px; }
+  }
+
+  /* MODALE GALERIE PLEIN ECRAN */
+  .gallery-modal{
+    position: fixed; inset: 0; z-index: 600; background: rgba(6,5,4,0.92);
+    display: flex; align-items: center; justify-content: center; padding: 20px;
+  }
+  .gallery-modal[hidden]{ display: none; }
+  .gallery-stage{
+    position: relative; width: min(1000px, 92vw); height: min(88vh, 900px);
+    background: var(--bg-soft); border: 1px solid var(--line); border-radius: 18px;
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .gallery-chrome{
+    display: flex; align-items: center; gap: 8px; padding: 12px 16px;
+    background: #1b1b1b; border-bottom: 1px solid var(--line);
+  }
+  .gallery-chrome .dot{ width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .gallery-chrome .chrome-url{
+    margin-left: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: var(--cream-dim); background: rgba(244,236,223,0.06); padding: 5px 12px;
+    border-radius: 100px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .gallery-badge{
+    font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .04em;
+    text-transform: uppercase; color: var(--cream-dim); border: 1px solid var(--line);
+    padding: 4px 10px; border-radius: 100px; flex-shrink: 0;
+  }
+  #galleryFrame, #galleryImage{ flex: 1; width: 100%; border: none; background: #fff; object-fit: contain; }
+  .gallery-close{
+    position: absolute; top: 22px; right: 22px; z-index: 5;
+    width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line);
+    background: rgba(10,10,10,0.6); color: var(--cream); font-size: 18px; cursor: pointer;
+  }
+  .gallery-close:hover{ border-color: var(--pink); }
+  .gallery-arrow{
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 5;
+    width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--line);
+    background: rgba(10,10,10,0.6); color: var(--cream); font-size: 24px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .gallery-arrow:hover{ border-color: var(--pink); }
+  .gallery-arrow.prev{ left: 18px; }
+  .gallery-arrow.next{ right: 18px; }
+  @media (max-width: 760px){
+    .gallery-stage{ width: 100vw; height: 100vh; border-radius: 0; }
+    .gallery-arrow{ width: 42px; height: 42px; font-size: 20px; }
+    .gallery-arrow.prev{ left: 6px; }
+    .gallery-arrow.next{ right: 6px; }
+    .gallery-close{ top: 10px; right: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="index.html">
+      <img src="logo-nav.png" alt="Logo PitaIA" width="26" height="26" style="border-radius:5px;">
+      Pita<span style="color:var(--pink);">IA</span>
+    </a>
+    <a href="index.html#contact" class="btn-nav">Parler de mon projet</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Services · Site web</div>
+    <h1>Des sites conçus pour les commerces et entreprises de La Réunion</h1>
+    <p>PitaIA crée des sites vitrines, des espaces de commande en ligne et des outils métier sur mesure pour les indépendants, commerces et entreprises de l'île. Voici quelques exemples concrets de ce qui peut être créé pour votre activité.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Démonstrations</div>
+      <h2 style="font-size:clamp(24px,3.2vw,32px); margin-top:12px;">Découvrez nos créations</h2>
+      <p style="margin-top:12px; color:var(--cream-dim); font-size:15.5px;">Quelques exemples de sites que PitaIA peut créer pour votre activité — démonstrations fictives, pas des projets de clients réels.</p>
+    </div>
+  </div>
+
+  <div class="carousel-outer">
+    <button type="button" class="carousel-arrow prev" data-dir="-1" aria-label="Démo précédente">‹</button>
+    <div class="carousel-track" id="demoCarousel" role="list">
+
+      <div class="carousel-slide" role="listitem">
+        <div class="slide-frame" tabindex="0" role="button" data-index="0" aria-label="Ouvrir en plein écran : démo Restaurant, menu digital">
+          <div class="slide-chrome">
+            <span class="dot" style="background:#ec3a80"></span>
+            <span class="dot" style="background:#d1a441"></span>
+            <span class="dot" style="background:#9bd045"></span>
+            <span class="chrome-url">darling-rugelach-d055d9.netlify.app</span>
+          </div>
+          <span class="frame-badge">Démo fictive</span>
+          <div class="slide-media">
+            <iframe src="https://darling-rugelach-d055d9.netlify.app" title="Aperçu démo Restaurant — menu digital" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+        </div>
+        <div class="slide-caption">Restaurant · Menu digital</div>
+      </div>
+
+      <div class="carousel-slide" role="listitem">
+        <div class="slide-frame" tabindex="0" role="button" data-index="1" aria-label="Ouvrir en plein écran : démo Salon de coiffure, prise de rendez-vous">
+          <div class="slide-chrome">
+            <span class="dot" style="background:#ec3a80"></span>
+            <span class="dot" style="background:#d1a441"></span>
+            <span class="dot" style="background:#9bd045"></span>
+            <span class="chrome-url">transcendent-pony-9c8654.netlify.app</span>
+          </div>
+          <span class="frame-badge">Démo fictive</span>
+          <div class="slide-media">
+            <iframe src="https://transcendent-pony-9c8654.netlify.app" title="Aperçu démo Salon de coiffure — prise de rendez-vous" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+        </div>
+        <div class="slide-caption">Salon de coiffure · Prise de rendez-vous</div>
+      </div>
+
+      <div class="carousel-slide" role="listitem">
+        <div class="slide-frame" tabindex="0" role="button" data-index="2" aria-label="Ouvrir en plein écran : démo Commerce, vitrine avec catalogue">
+          <div class="slide-chrome">
+            <span class="dot" style="background:#ec3a80"></span>
+            <span class="dot" style="background:#d1a441"></span>
+            <span class="dot" style="background:#9bd045"></span>
+            <span class="chrome-url">magnificent-pothos-8e05f0.netlify.app</span>
+          </div>
+          <span class="frame-badge">Démo fictive</span>
+          <div class="slide-media">
+            <iframe src="https://magnificent-pothos-8e05f0.netlify.app" title="Aperçu démo Commerce — vitrine avec catalogue" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+        </div>
+        <div class="slide-caption">Commerce · Vitrine avec catalogue</div>
+      </div>
+
+      <div class="carousel-slide" role="listitem">
+        <div class="slide-frame" tabindex="0" role="button" data-index="3" aria-label="Ouvrir en plein écran : aperçu Entreprise, tableau de bord">
+          <div class="slide-chrome">
+            <span class="dot" style="background:#ec3a80"></span>
+            <span class="dot" style="background:#d1a441"></span>
+            <span class="dot" style="background:#9bd045"></span>
+            <span class="chrome-url">aperçu — tableau de bord</span>
+          </div>
+          <span class="frame-badge">Démo fictive</span>
+          <div class="slide-media">
+            <img src="dashboard-mockup.jpg" alt="Aperçu d'un tableau de bord personnalisé" loading="lazy">
+          </div>
+        </div>
+        <div class="slide-caption">Entreprise · Tableau de bord</div>
+      </div>
+
+    </div>
+    <button type="button" class="carousel-arrow next" data-dir="1" aria-label="Démo suivante">›</button>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>Votre activité mérite le même soin</h2>
+      <p>Décrivez-moi votre projet, je vous montre rapidement à quoi pourrait ressembler votre propre site.</p>
+      <a href="index.html#contact" class="btn-primary">Parler de mon projet →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 PitaIA — Prestataire web indépendant</div>
+    <div>La Réunion</div>
+  </div>
+</footer>
+
+<div class="gallery-modal" id="galleryModal" hidden>
+  <div class="gallery-stage">
+    <div class="gallery-chrome">
+      <span class="dot" style="background:#ec3a80"></span>
+      <span class="dot" style="background:#d1a441"></span>
+      <span class="dot" style="background:#9bd045"></span>
+      <span class="chrome-url" id="galleryUrl"></span>
+      <span class="gallery-badge">Démo fictive</span>
+    </div>
+    <iframe id="galleryFrame" src="" title="Démo en plein écran"></iframe>
+    <img id="galleryImage" src="" alt="" hidden>
+  </div>
+  <button type="button" class="gallery-close" id="galleryClose" aria-label="Fermer l'aperçu">✕</button>
+  <button type="button" class="gallery-arrow prev" id="galleryPrev" aria-label="Démo précédente">‹</button>
+  <button type="button" class="gallery-arrow next" id="galleryNext" aria-label="Démo suivante">›</button>
+</div>
+
+<script>
+  var demoGallery = [
+    { title: 'darling-rugelach-d055d9.netlify.app', url: 'https://darling-rugelach-d055d9.netlify.app', type: 'iframe' },
+    { title: 'transcendent-pony-9c8654.netlify.app', url: 'https://transcendent-pony-9c8654.netlify.app', type: 'iframe' },
+    { title: 'magnificent-pothos-8e05f0.netlify.app', url: 'https://magnificent-pothos-8e05f0.netlify.app', type: 'iframe' },
+    { title: 'aperçu — tableau de bord', url: 'dashboard-mockup.jpg', type: 'image' }
+  ];
+  var galleryModal = document.getElementById('galleryModal');
+  var galleryFrame = document.getElementById('galleryFrame');
+  var galleryImage = document.getElementById('galleryImage');
+  var galleryUrlEl = document.getElementById('galleryUrl');
+  var galleryIndex = 0;
+
+  function renderGallerySlide(){
+    var d = demoGallery[galleryIndex];
+    galleryUrlEl.textContent = d.title;
+    if (d.type === 'iframe'){
+      galleryImage.hidden = true; galleryImage.src = '';
+      galleryFrame.hidden = false; galleryFrame.src = d.url;
+    } else {
+      galleryFrame.hidden = true; galleryFrame.src = '';
+      galleryImage.hidden = false; galleryImage.src = d.url; galleryImage.alt = d.title;
+    }
+  }
+  function openGallery(i){
+    galleryIndex = i;
+    renderGallerySlide();
+    galleryModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeGallery(){
+    galleryModal.hidden = true;
+    galleryFrame.src = ''; galleryImage.src = '';
+    document.body.style.overflow = '';
+  }
+  function galleryStep(dir){
+    galleryIndex = (galleryIndex + dir + demoGallery.length) % demoGallery.length;
+    renderGallerySlide();
+  }
+  document.querySelectorAll('.slide-frame').forEach(function(el){
+    el.addEventListener('click', function(){ openGallery(parseInt(el.getAttribute('data-index'), 10)); });
+    el.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        openGallery(parseInt(el.getAttribute('data-index'), 10));
+      }
+    });
+  });
+  document.getElementById('galleryPrev').addEventListener('click', function(){ galleryStep(-1); });
+  document.getElementById('galleryNext').addEventListener('click', function(){ galleryStep(1); });
+  document.getElementById('galleryClose').addEventListener('click', closeGallery);
+  galleryModal.addEventListener('click', function(e){
+    if (e.target === galleryModal) closeGallery();
+  });
+  document.addEventListener('keydown', function(e){
+    if (galleryModal.hidden) return;
+    if (e.key === 'Escape') closeGallery();
+    if (e.key === 'ArrowLeft') galleryStep(-1);
+    if (e.key === 'ArrowRight') galleryStep(1);
+  });
+
+  document.querySelectorAll('.carousel-arrow').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var dir = parseInt(btn.getAttribute('data-dir'), 10);
+      var track = document.getElementById('demoCarousel');
+      var slide = track.querySelector('.carousel-slide');
+      var gap = 24;
+      var step = slide ? slide.getBoundingClientRect().width + gap : 300;
+      track.scrollBy({ left: dir * step, behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
