@@ -574,6 +574,66 @@
   @media (max-width: 560px){ .addon-grid{ grid-template-columns: 1fr; } }
 
   /* CTA post-tarifs */
+  /* TEASER DEMOS (aperçu cliquable vers la page démonstrations) */
+  .demo-teaser{
+    display:block; text-decoration:none; position:relative;
+    background: var(--card); border:1px solid var(--line); border-radius:24px;
+    padding: 46px 40px 40px; overflow:hidden;
+    transition: border-color .25s ease, transform .25s ease;
+  }
+  .demo-teaser:hover, .demo-teaser:focus-visible{
+    border-color: var(--pink); transform: translateY(-4px);
+  }
+  .demo-teaser-inner{
+    display:grid; grid-template-columns: 1fr 1fr; gap:44px; align-items:center;
+  }
+  .demo-teaser-text .eyebrow{ margin-bottom:14px; }
+  .demo-teaser-text h3{
+    font-family:'Fraunces',serif; font-weight:600; font-size:clamp(23px,2.8vw,30px);
+    color:var(--cream); line-height:1.2;
+  }
+  .demo-teaser-text p{ margin-top:12px; font-size:15px; color:var(--cream-dim); }
+  .demo-teaser-cta{
+    margin-top:24px; display:inline-flex; align-items:center; gap:9px;
+    background: var(--pink); color:#1a1a1a; font-weight:700; font-size:15px;
+    padding:14px 26px; border-radius:100px;
+  }
+  .demo-teaser-count{
+    margin-top:14px; font-family:'JetBrains Mono',monospace; font-size:12px;
+    color:var(--cream-dim); letter-spacing:.03em;
+  }
+
+  /* pile de mini-aperçus */
+  .demo-stack{ position:relative; height:250px; }
+  .demo-stack .mini{
+    position:absolute; width:78%; border-radius:12px; overflow:hidden;
+    border:1px solid var(--line); background:#1b1b1b;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+    transition: transform .3s ease;
+  }
+  .demo-stack .mini-bar{
+    display:flex; align-items:center; gap:4px; padding:7px 10px;
+    background:#242424; border-bottom:1px solid var(--line);
+  }
+  .demo-stack .mini-bar i{ width:6px; height:6px; border-radius:50%; display:block; }
+  .demo-stack .mini-body{ height:118px; display:block; width:100%; object-fit:cover; }
+  .demo-stack svg.mini-body{ object-fit:fill; }
+  .demo-stack .m1{ top:0; left:0; transform: rotate(-5deg); z-index:1; }
+  .demo-stack .m2{ top:28px; left:11%; transform: rotate(2deg); z-index:2; }
+  .demo-stack .m3{ top:62px; left:22%; transform: rotate(7deg); z-index:3; }
+  .demo-teaser:hover .m1{ transform: rotate(-8deg) translateY(-6px); }
+  .demo-teaser:hover .m2{ transform: rotate(2deg) translateY(-3px); }
+  .demo-teaser:hover .m3{ transform: rotate(10deg) translateY(-8px); }
+
+  @media (max-width: 860px){
+    .demo-teaser{ padding:34px 24px 30px; }
+    .demo-teaser-inner{ grid-template-columns:1fr; gap:10px; }
+    .demo-stack{ height:210px; order:-1; margin-bottom:18px; }
+    .demo-stack .mini{ width:72%; }
+    .demo-teaser-text{ text-align:center; }
+    .demo-teaser-text .eyebrow{ justify-content:center; }
+  }
+
   .helper-cta{
     margin-top: 60px; background: var(--card); border: 1px solid var(--line);
     border-radius: 20px; padding: 40px; text-align: center;
@@ -797,6 +857,76 @@
     text-align: center;
   }
 
+  /* ASSISTANT GUIDÉ */
+  .chat-bubble{
+    position: fixed; right: 24px; bottom: 24px; z-index: 300;
+    width: 58px; height: 58px; border-radius: 50%; border: none;
+    background: var(--pink); color: #1a1a1a; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    transition: transform .2s ease;
+  }
+  .chat-bubble:hover{ transform: scale(1.06); }
+  .chat-bubble svg{ width: 26px; height: 26px; }
+  .chat-bubble .close-ico{ display: none; }
+  .chat-bubble.open .open-ico{ display: none; }
+  .chat-bubble.open .close-ico{ display: block; }
+  .chat-nudge{
+    position: fixed; right: 92px; bottom: 36px; z-index: 300;
+    background: var(--card); border: 1px solid var(--line); color: var(--cream);
+    font-size: 13.5px; padding: 10px 16px; border-radius: 100px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4); white-space: nowrap;
+  }
+  .chat-nudge[hidden]{ display: none; }
+
+  .chat-panel{
+    position: fixed; right: 24px; bottom: 94px; z-index: 300;
+    width: min(380px, calc(100vw - 32px)); height: min(540px, calc(100vh - 140px));
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    display: flex; flex-direction: column; overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+  }
+  .chat-panel[hidden]{ display: none; }
+  .chat-head{
+    display: flex; align-items: center; gap: 11px;
+    padding: 16px 18px; border-bottom: 1px solid var(--line); background: var(--bg-soft);
+  }
+  .chat-head img{ width: 30px; height: 30px; border-radius: 7px; }
+  .chat-head .t{ font-family:'Fraunces',serif; font-weight:600; font-size:15.5px; color: var(--cream); }
+  .chat-head .s{ font-size: 11.5px; color: var(--cream-dim); display:flex; align-items:center; gap:5px; }
+  .chat-head .s::before{ content:''; width:6px; height:6px; border-radius:50%; background: var(--lime); }
+  .chat-head button{
+    margin-left: auto; background: none; border: none; color: var(--cream-dim);
+    font-size: 17px; cursor: pointer; padding: 4px 6px;
+  }
+  .chat-head button:hover{ color: var(--cream); }
+
+  .chat-body{ flex: 1; overflow-y: auto; padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+  .chat-msg{
+    max-width: 84%; font-size: 14px; line-height: 1.5; padding: 11px 14px; border-radius: 14px;
+  }
+  .chat-msg.bot{ background: var(--bg-soft); color: var(--cream-dim); border-bottom-left-radius: 5px; align-self: flex-start; }
+  .chat-msg.bot strong{ color: var(--cream); }
+  .chat-msg.me{ background: var(--pink); color: #1a1a1a; font-weight: 600; border-bottom-right-radius: 5px; align-self: flex-end; }
+  .chat-options{ display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+  .chat-opt{
+    text-align: left; background: none; border: 1px solid var(--line); color: var(--cream);
+    font-family: inherit; font-size: 13.5px; padding: 11px 14px; border-radius: 12px; cursor: pointer;
+    transition: border-color .15s, background .15s; text-decoration: none; display: block;
+  }
+  .chat-opt:hover{ border-color: var(--pink); background: rgba(236,58,128,0.07); }
+  .chat-opt.primary{ background: var(--pink); color: #1a1a1a; border-color: var(--pink); font-weight: 700; }
+  .chat-foot{
+    padding: 10px 18px; border-top: 1px solid var(--line);
+    font-family:'JetBrains Mono',monospace; font-size: 10.5px; color: var(--cream-dim); text-align: center;
+  }
+
+  @media (max-width: 860px){
+    .chat-bubble{ bottom: 86px; right: 16px; width: 52px; height: 52px; }
+    .chat-panel{ bottom: 148px; right: 16px; height: min(500px, calc(100vh - 200px)); }
+    .chat-nudge{ display: none; }
+  }
+
   /* CTA FLOTTANT MOBILE */
   .mobile-float-cta{
     display: none;
@@ -897,6 +1027,7 @@
           <a href="#svc-ecommerce">Site e-commerce</a>
           <a href="#svc-dashboard">Tableaux de bord</a>
           <a href="#svc-outils-mesure">Outils métier sur mesure</a>
+          <a href="prise-de-rendez-vous-en-ligne-reunion.html">Prise de rendez-vous en ligne</a>
         </div>
       </div>
       <div class="nav-item" data-nav-item>
@@ -917,6 +1048,7 @@
     <a class="mobile-menu-link" href="#services">Services</a>
     <a class="mobile-menu-link" href="services.html">Services (détail)</a>
     <a class="mobile-menu-link" href="#tarifs">Tarifs</a>
+    <a class="mobile-menu-link" href="prise-de-rendez-vous-en-ligne-reunion.html">Prise de rendez-vous</a>
     <a class="mobile-menu-link" href="creation-site-web-reunion.html">Démonstrations</a>
     <a class="mobile-menu-link" href="faq.html">FAQ</a>
     <a class="mobile-menu-link mobile-menu-cta" href="#contact">Parler de mon projet →</a>
@@ -1057,12 +1189,72 @@
 
 <section id="exemples" class="alt-bg">
   <div class="wrap">
-    <div class="helper-cta">
-      <div class="eyebrow" style="justify-content:center;">Exemples de projets</div>
-      <h3 style="margin-top:14px;">Découvrez nos créations en action</h3>
-      <p>Restaurant, salon de coiffure, commerce, tableau de bord — des démonstrations concrètes de ce que PitaIA peut créer pour votre activité.</p>
-      <a href="creation-site-web-reunion.html" class="btn-primary">Voir nos démonstrations →</a>
-    </div>
+    <a href="creation-site-web-reunion.html" class="demo-teaser" aria-label="Voir toutes nos démonstrations de sites web">
+      <div class="demo-teaser-inner">
+        <div class="demo-teaser-text">
+          <div class="eyebrow">Exemples de projets</div>
+          <h3>Voyez à quoi pourrait ressembler votre site</h3>
+          <p>Restaurant, salon de coiffure, commerce, tableau de bord — des démonstrations complètes, navigables comme de vrais sites.</p>
+          <span class="demo-teaser-cta">Voir les démonstrations →</span>
+          <div class="demo-teaser-count">4 exemples · démos fictives</div>
+        </div>
+        <div class="demo-stack" aria-hidden="true">
+          <div class="mini m1">
+            <div class="mini-bar"><i style="background:#ec3a80"></i><i style="background:#d1a441"></i><i style="background:#9bd045"></i></div>
+            <svg class="mini-body" viewBox="0 0 260 118" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <rect width="260" height="118" fill="#151515"/>
+              <rect x="14" y="12" width="60" height="7" rx="3" fill="#f4ecdf" opacity=".85"/>
+              <rect x="196" y="11" width="50" height="10" rx="5" fill="#ec3a80"/>
+              <rect x="14" y="32" width="150" height="9" rx="3" fill="#f4ecdf" opacity=".55"/>
+              <rect x="14" y="47" width="110" height="5" rx="2" fill="#8a8a8a"/>
+              <rect x="14" y="62" width="70" height="26" rx="6" fill="#232323"/>
+              <rect x="92" y="62" width="70" height="26" rx="6" fill="#232323"/>
+              <rect x="170" y="62" width="76" height="26" rx="6" fill="#232323"/>
+              <rect x="22" y="70" width="34" height="4" rx="2" fill="#9bd045" opacity=".8"/>
+              <rect x="100" y="70" width="34" height="4" rx="2" fill="#d1a441" opacity=".8"/>
+              <rect x="178" y="70" width="34" height="4" rx="2" fill="#9bd045" opacity=".6"/>
+              <rect x="14" y="98" width="100" height="5" rx="2" fill="#5c5c5c"/>
+            </svg>
+          </div>
+          <div class="mini m2">
+            <div class="mini-bar"><i style="background:#ec3a80"></i><i style="background:#d1a441"></i><i style="background:#9bd045"></i></div>
+            <svg class="mini-body" viewBox="0 0 260 118" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <rect width="260" height="118" fill="#f6f0e6"/>
+              <rect x="0" y="0" width="260" height="22" fill="#2b2320"/>
+              <rect x="12" y="8" width="44" height="6" rx="3" fill="#f6f0e6" opacity=".9"/>
+              <rect x="206" y="6" width="42" height="10" rx="5" fill="#c98a4b"/>
+              <rect x="14" y="34" width="112" height="8" rx="3" fill="#2b2320" opacity=".8"/>
+              <rect x="14" y="50" width="232" height="18" rx="5" fill="#fff"/>
+              <rect x="22" y="56" width="60" height="5" rx="2" fill="#2b2320" opacity=".6"/>
+              <rect x="212" y="56" width="26" height="5" rx="2" fill="#c98a4b"/>
+              <rect x="14" y="72" width="232" height="18" rx="5" fill="#fff"/>
+              <rect x="22" y="78" width="74" height="5" rx="2" fill="#2b2320" opacity=".6"/>
+              <rect x="212" y="78" width="26" height="5" rx="2" fill="#c98a4b"/>
+              <rect x="14" y="96" width="94" height="14" rx="7" fill="#c98a4b"/>
+            </svg>
+          </div>
+          <div class="mini m3">
+            <div class="mini-bar"><i style="background:#ec3a80"></i><i style="background:#d1a441"></i><i style="background:#9bd045"></i></div>
+            <svg class="mini-body" viewBox="0 0 260 118" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <rect width="260" height="118" fill="#fbf8f2"/>
+              <rect x="0" y="0" width="260" height="20" fill="#0b2436"/>
+              <rect x="12" y="7" width="40" height="6" rx="3" fill="#fbf8f2" opacity=".9"/>
+              <rect x="14" y="30" width="72" height="44" rx="6" fill="#e6ddcd"/>
+              <rect x="94" y="30" width="72" height="44" rx="6" fill="#e6ddcd"/>
+              <rect x="174" y="30" width="72" height="44" rx="6" fill="#e6ddcd"/>
+              <circle cx="38" cy="46" r="6" fill="#d1a441" opacity=".7"/>
+              <polygon points="22,68 42,50 58,64 78,44 78,68" fill="#cfc0a6"/>
+              <polygon points="102,68 122,50 138,64 158,44 158,68" fill="#cfc0a6"/>
+              <polygon points="182,68 202,50 218,64 238,44 238,68" fill="#cfc0a6"/>
+              <rect x="14" y="80" width="44" height="5" rx="2" fill="#0b2436" opacity=".55"/>
+              <rect x="94" y="80" width="44" height="5" rx="2" fill="#0b2436" opacity=".55"/>
+              <rect x="174" y="80" width="44" height="5" rx="2" fill="#0b2436" opacity=".55"/>
+              <rect x="14" y="94" width="86" height="14" rx="7" fill="#ec3a80"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </a>
   </div>
 </section>
 

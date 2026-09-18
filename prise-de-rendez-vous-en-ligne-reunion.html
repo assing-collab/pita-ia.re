@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prise de rendez-vous en ligne à La Réunion | PitaIA</title>
+<meta name="robots" content="index, follow">
+<meta name="description" content="Pita RDV : réservation en ligne pour salons, instituts et indépendants de La Réunion. À partir de 29 €/mois, sans commission et sans engagement.">
+<link rel="canonical" href="https://pita-ia.re/prise-de-rendez-vous-en-ligne-reunion.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PitaIA">
+<meta property="og:title" content="Prise de rendez-vous en ligne à La Réunion | PitaIA">
+<meta property="og:description" content="Vos clientes réservent en ligne, vous arrêtez de gérer les messages. À partir de 29 €/mois, sans commission.">
+<meta property="og:url" content="https://pita-ia.re/prise-de-rendez-vous-en-ligne-reunion.html">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://pita-ia.re/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152.png">
+
+<link rel="preload" href="./fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+  @font-face{ font-family:'Fraunces'; font-style:normal; font-weight:100 900; font-display:swap;
+    src:url('./fonts/fraunces-latin.woff2') format('woff2-variations'), url('./fonts/fraunces-latin.woff2') format('woff2'); }
+  @font-face{ font-family:'Inter'; font-style:normal; font-weight:100 900; font-display:swap;
+    src:url('./fonts/inter-latin.woff2') format('woff2-variations'), url('./fonts/inter-latin.woff2') format('woff2'); }
+  @font-face{ font-family:'JetBrains Mono'; font-style:normal; font-weight:100 800; font-display:swap;
+    src:url('./fonts/jetbrains-mono-latin.woff2') format('woff2-variations'), url('./fonts/jetbrains-mono-latin.woff2') format('woff2'); }
+
+  :root{
+    --bg:#0a0a0a; --bg-soft:#121212; --card:#161616;
+    --cream:#f4ecdf; --cream-dim:#cfc4b2;
+    --pink:#ec3a80; --pink-dim:#7a2144;
+    --lime:#9bd045; --gold:#d1a441;
+    --line:rgba(244,236,223,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--bg); color:var(--cream); font-family:'Inter',sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  .wrap{ max-width:900px; margin:0 auto; padding:0 26px; }
+  h1,h2,h3{ font-family:'Fraunces',serif; font-weight:600; letter-spacing:-0.01em; }
+  .eyebrow{ font-family:'JetBrains Mono',monospace; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--pink); display:flex; align-items:center; gap:10px; }
+  .eyebrow::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--pink); box-shadow:0 0 0 3px var(--pink-dim); }
+
+  nav{ position:sticky; top:0; z-index:50; background:rgba(10,10,10,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  nav .wrap{ max-width:1100px; display:flex; align-items:center; justify-content:space-between; height:76px; }
+  .logo{ display:flex; align-items:center; gap:10px; font-family:'Fraunces',serif; font-weight:700; font-size:22px; color:var(--cream); text-decoration:none; }
+  .logo img{ width:26px; height:26px; border-radius:5px; }
+  .btn-nav{ background:var(--pink); color:#1a1a1a; font-weight:600; padding:10px 18px; border-radius:100px; text-decoration:none; font-size:14px; }
+  .btn-back{
+    border:1px solid var(--line); color:var(--cream-dim); padding:9px 16px;
+    border-radius:100px; text-decoration:none; font-size:13.5px;
+    display:inline-flex; align-items:center; gap:7px; transition:color .2s, border-color .2s;
+  }
+  .btn-back:hover{ color:var(--cream); border-color:var(--cream-dim); }
+  .nav-actions{ display:flex; align-items:center; gap:12px; }
+  @media (max-width:560px){ .nav-actions .btn-nav{ display:none; } }
+
+  header.page-head{ padding:66px 0 8px; }
+  .product-tag{
+    display:inline-flex; align-items:center; gap:8px; margin-top:16px;
+    font-family:'Fraunces',serif; font-weight:700; font-size:19px; color:var(--cream);
+    border:1px solid var(--line); border-radius:100px; padding:6px 17px; background:var(--card);
+  }
+  .product-tag span{ color:var(--pink); }
+  header.page-head h1{ font-size:clamp(28px,4.3vw,44px); margin-top:20px; max-width:740px; line-height:1.14; }
+  header.page-head p.lead{ margin-top:17px; color:var(--cream-dim); font-size:16.5px; max-width:600px; }
+  .head-cta{ margin-top:26px; display:flex; gap:13px; flex-wrap:wrap; }
+  .btn-primary{ background:var(--pink); color:#1a1a1a; font-weight:700; padding:14px 26px; border-radius:100px; text-decoration:none; font-size:14.5px; display:inline-flex; align-items:center; gap:8px; }
+  .btn-ghost{ border:1px solid var(--line); color:var(--cream); padding:14px 24px; border-radius:100px; text-decoration:none; font-size:14.5px; display:inline-flex; align-items:center; gap:8px; }
+  .btn-ghost:hover{ border-color:var(--pink); }
+
+  section{ padding:56px 0; }
+  section.alt{ background:var(--bg-soft); }
+  .section-head{ max-width:640px; margin-bottom:26px; }
+  .section-head h2{ font-size:clamp(24px,3.1vw,31px); margin-top:12px; }
+  .section-head p{ margin-top:11px; color:var(--cream-dim); font-size:15.5px; }
+
+  /* offres */
+  .offre{
+    background:var(--card); border:1px solid var(--line); border-radius:18px;
+    padding:28px 28px 26px; margin-bottom:18px; position:relative;
+  }
+  .offre.principale{ border-color:var(--pink); }
+  .etiquette{
+    position:absolute; top:-12px; left:24px; background:var(--pink); color:#1a1a1a;
+    font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700;
+    letter-spacing:.05em; text-transform:uppercase; padding:5px 12px; border-radius:100px;
+  }
+  .offre h3{ font-size:21px; margin-bottom:5px; }
+  .pour-qui{ color:var(--cream-dim); font-size:14px; margin-bottom:18px; }
+  .prix{
+    display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+    padding-bottom:17px; margin-bottom:18px; border-bottom:1px solid var(--line);
+  }
+  .montant{ font-family:'Fraunces',serif; font-size:31px; font-weight:600; line-height:1; color:var(--cream); }
+  .par-mois{ font-size:15px; color:var(--cream-dim); }
+  .mise-en-service{ font-size:13.5px; color:var(--cream-dim); width:100%; margin-top:4px; }
+  .offre ul{ list-style:none; }
+  .offre li{ position:relative; padding-left:25px; margin-bottom:9px; font-size:14.5px; color:var(--cream-dim); }
+  .offre li::before{
+    content:""; position:absolute; left:3px; top:7px; width:6px; height:10px;
+    border-right:2px solid var(--lime); border-bottom:2px solid var(--lime); transform:rotate(45deg);
+  }
+  .offre li.inclus-avant{ font-weight:600; color:var(--gold); }
+  .offre li.inclus-avant::before{ border-color:var(--gold); }
+
+  .exemple-domaine{
+    margin-top:18px; background:var(--bg); border:1px solid var(--line);
+    border-radius:12px; padding:16px 18px;
+  }
+  .exemple-domaine .lbl{
+    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--gold); margin-bottom:8px;
+  }
+  .exemple-domaine p{ font-size:14px; color:var(--cream-dim); }
+  .exemple-domaine code{
+    font-family:'JetBrains Mono',monospace; color:var(--lime); font-size:14px;
+    background:rgba(155,208,69,0.1); padding:2px 8px; border-radius:5px;
+  }
+
+  /* tableau comparatif */
+  .tableau-conteneur{ overflow-x:auto; border:1px solid var(--line); border-radius:16px; }
+  table{ width:100%; border-collapse:collapse; background:var(--card); font-size:14px; min-width:520px; }
+  th, td{ padding:14px 16px; text-align:left; border-bottom:1px solid var(--line); color:var(--cream-dim); vertical-align:top; }
+  th{ background:var(--bg-soft); font-weight:600; font-size:12.5px; color:var(--cream); font-family:'JetBrains Mono',monospace; letter-spacing:.04em; text-transform:uppercase; }
+  tr:last-child td{ border-bottom:none; }
+  td strong{ color:var(--cream); }
+  td.pita{ background:rgba(236,58,128,0.07); color:var(--cream); font-weight:500; }
+
+  /* atouts */
+  .grille-atouts{ display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:14px; }
+  .atout{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px 22px; }
+  .atout strong{ display:block; font-family:'Fraunces',serif; font-size:16.5px; font-weight:600; color:var(--cream); margin-bottom:6px; }
+  .atout span{ font-size:14px; color:var(--cream-dim); }
+
+  .final-cta{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:44px 30px; text-align:center; }
+  .final-cta h2{ font-size:clamp(23px,3vw,30px); color:var(--cream); }
+  .final-cta p{ margin-top:10px; color:var(--cream-dim); font-size:15px; max-width:480px; margin-left:auto; margin-right:auto; }
+  .final-cta .btn-primary{ margin-top:20px; }
+
+  .mention{ text-align:center; color:var(--cream-dim); opacity:.8; font-size:12.5px; margin-top:24px; }
+
+  footer{ border-top:1px solid var(--line); padding:30px 0; margin-top:40px; }
+  footer .wrap{ max-width:1100px; display:flex; justify-content:space-between; align-items:center; color:var(--cream-dim); font-size:13px; flex-wrap:wrap; gap:12px; }
+
+  @media (max-width:600px){
+    .offre{ padding:24px 20px 22px; }
+    section{ padding:44px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="index.html">
+      <img src="logo-nav.png" alt="Logo PitaIA" width="26" height="26">
+      Pita<span style="color:var(--pink);">IA</span>
+    </a>
+    <div class="nav-actions">
+      <a href="index.html" class="btn-back">&larr; Accueil</a>
+      <a href="index.html#contact" class="btn-nav">Parler de mon projet</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Services &middot; Prise de rendez-vous en ligne</div>
+    <div class="product-tag">Pita<span>RDV</span></div>
+    <h1>Vos clients réservent en ligne, vous arrêtez de gérer les messages</h1>
+    <p class="lead">Un outil de prise de rendez-vous fait pour les salons, instituts et indépendants de La Réunion. Tarif fixe, aucune commission sur vos rendez-vous.</p>
+    <div class="head-cta">
+      <a href="index.html#contact" class="btn-primary">Demander une démonstration →</a>
+      <a href="#tarifs" class="btn-ghost">Voir les tarifs</a>
+    </div>
+  </div>
+</header>
+
+<section id="tarifs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tarifs</div>
+      <h2>Deux formules</h2>
+      <p>Vous savez exactement ce que vous paierez le mois prochain. Sans engagement de durée.</p>
+    </div>
+
+    <div class="offre">
+      <h3>Réservation seule</h3>
+      <p class="pour-qui">Vous avez déjà une page Instagram ou une fiche Google, il vous manque juste la prise de rendez-vous.</p>
+
+      <div class="prix">
+        <span class="montant">29 €</span>
+        <span class="par-mois">par mois</span>
+        <span class="mise-en-service">Sans frais de mise en service</span>
+      </div>
+
+      <ul>
+        <li>Un lien à mettre dans votre bio, sur Google ou en QR code au comptoir</li>
+        <li>Vos clients réservent 24h/24, même quand c'est fermé</li>
+        <li>Confirmation envoyée automatiquement par email</li>
+        <li>Le rendez-vous s'ajoute au calendrier du téléphone de votre client</li>
+        <li>Tableau de bord : planning jour et semaine, prestations, tarifs, congés</li>
+        <li>Fiche client avec historique des rendez-vous</li>
+        <li>Statistiques simples sur votre activité</li>
+        <li>Réservations illimitées</li>
+      </ul>
+    </div>
+
+    <div class="offre principale">
+      <span class="etiquette">Le plus complet</span>
+      <h3>Site vitrine + réservation</h3>
+      <p class="pour-qui">Vous voulez exister sur internet avec votre propre nom de domaine, pas seulement sur Instagram.</p>
+
+      <div class="prix">
+        <span class="montant">39 €</span>
+        <span class="par-mois">par mois</span>
+        <span class="mise-en-service">+ 450 € de mise en service (site, installation, configuration, prise en main)</span>
+      </div>
+
+      <ul>
+        <li class="inclus-avant">Tout ce que contient la formule Réservation seule</li>
+        <li>Un site vitrine complet à votre nom, sur votre propre domaine</li>
+        <li>Vos couleurs, votre logo, vos photos</li>
+        <li>Présentation des prestations, horaires et accès</li>
+        <li>Réservation intégrée directement dans le site</li>
+        <li>Site pensé pour le téléphone avant tout</li>
+      </ul>
+
+      <div class="exemple-domaine">
+        <div class="lbl">Exemple concret</div>
+        <p>Le salon <strong style="color:var(--cream);">Belle Épine</strong> obtient son propre site à l'adresse <code>belle-epine.re</code> — ses clients le trouvent sur Google et réservent directement dessus, sans passer par une plateforme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Comparatif</div>
+      <h2>Ce qui change par rapport aux autres</h2>
+      <p>Les solutions du marché fonctionnent, mais pas de la même façon.</p>
+    </div>
+
+    <div class="tableau-conteneur">
+      <table>
+        <tr>
+          <th></th>
+          <th>Ailleurs</th>
+          <th>Chez PitaIA</th>
+        </tr>
+        <tr>
+          <td><strong>Commission</strong></td>
+          <td>Certaines plateformes prélèvent un pourcentage sur les nouveaux clients venus de leur annuaire</td>
+          <td class="pita">Aucune commission, jamais</td>
+        </tr>
+        <tr>
+          <td><strong>Volume</strong></td>
+          <td>Le tarif augmente par paliers selon le nombre de rendez-vous</td>
+          <td class="pita">Réservations illimitées au même prix</td>
+        </tr>
+        <tr>
+          <td><strong>Tarif</strong></td>
+          <td>Souvent uniquement sur devis, après un rendez-vous commercial</td>
+          <td class="pita">Affiché, vous savez ce que vous paierez le mois prochain</td>
+        </tr>
+        <tr>
+          <td><strong>Vos clients</strong></td>
+          <td>Ils réservent sur une plateforme qui propose aussi vos concurrents</td>
+          <td class="pita">Ils réservent chez vous, sur votre page</td>
+        </tr>
+        <tr>
+          <td><strong>Contact</strong></td>
+          <td>Service client à distance</td>
+          <td class="pita">Un développeur local, joignable</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Concrètement</div>
+      <h2>Ce que ça change dans une journée</h2>
+    </div>
+
+    <div class="grille-atouts">
+      <div class="atout">
+        <strong>Plus de messages à trier</strong>
+        <span>Fini les allers-retours pour trouver un créneau entre deux clients.</span>
+      </div>
+      <div class="atout">
+        <strong>Un planning toujours à jour</strong>
+        <span>Les créneaux réservés se bloquent tout seuls, en direct.</span>
+      </div>
+      <div class="atout">
+        <strong>Des rendez-vous pris la nuit</strong>
+        <span>Vos clients réservent quand ils y pensent, même à 22h.</span>
+      </div>
+      <div class="atout">
+        <strong>Vous gardez tout</strong>
+        <span>Votre domaine, votre fichier client, votre relation avec vos clients.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>On en parle ?</h2>
+      <p>Je vous montre l'outil en quinze minutes, adapté à votre métier et à vos prestations. Sans engagement.</p>
+      <a href="index.html#contact" class="btn-primary">Demander une démonstration →</a>
+      <p style="margin-top:22px;">
+        <a href="index.html" class="btn-back">&larr; Retour à la page d'accueil</a>
+      </p>
+    </div>
+
+    <p class="mention">Tarifs hors nom de domaine (15 à 30 € par an, à votre nom). Sans engagement de durée.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 PitaIA — Prestataire web indépendant</div>
+    <div>La Réunion</div>
+  </div>
+</footer>
+
+</body>
+</html>
