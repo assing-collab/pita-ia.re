@@ -346,6 +346,57 @@
   .service-card p{ margin-top: 10px; color: var(--cream-dim); font-size: 15px; }
   .service-family{ margin-bottom: 48px; }
   .service-family:last-child{ margin-bottom: 0; }
+  /* BLOC PRODUIT — outil de réservation en ligne */
+  .product-block{
+    background: linear-gradient(180deg, rgba(236,58,128,0.07), var(--card) 46%);
+    border:1px solid var(--pink); border-radius:22px;
+    padding:38px 38px 34px; position:relative; overflow:hidden;
+  }
+  .product-split{ display:grid; grid-template-columns:1.15fr 1fr; gap:42px; align-items:center; }
+  .product-name{
+    display:inline-flex; align-items:center; margin-bottom:14px;
+    font-family:'Fraunces',serif; font-weight:700; font-size:18px; color:var(--cream);
+    border:1px solid var(--line); border-radius:100px; padding:6px 16px; background:var(--bg);
+  }
+  .product-name span{ color:var(--pink); }
+  .product-block h3{ font-size:clamp(21px,2.5vw,27px); color:var(--cream); line-height:1.22; }
+  .product-block > .product-split > div > p.intro{
+    margin-top:12px; color:var(--cream-dim); font-size:15px; max-width:44ch;
+  }
+  .product-points{ list-style:none; margin-top:20px; display:flex; flex-direction:column; gap:9px; }
+  .product-points li{
+    position:relative; padding-left:24px; font-size:14.5px; color:var(--cream-dim);
+  }
+  .product-points li::before{
+    content:""; position:absolute; left:3px; top:6px; width:6px; height:10px;
+    border-right:2px solid var(--lime); border-bottom:2px solid var(--lime); transform:rotate(45deg);
+  }
+  .product-pricing{
+    display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;
+    padding-top:20px; border-top:1px solid var(--line);
+  }
+  .tarif-mini{
+    background:var(--bg); border:1px solid var(--line); border-radius:12px;
+    padding:13px 17px; flex:1; min-width:150px;
+  }
+  .tarif-mini .lbl{
+    font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.05em;
+    text-transform:uppercase; color:var(--gold); margin-bottom:6px;
+  }
+  .tarif-mini .val{ font-family:'Fraunces',serif; font-size:21px; color:var(--cream); }
+  .tarif-mini .val small{ font-family:'Inter',sans-serif; font-size:12.5px; color:var(--cream-dim); font-weight:400; }
+  .tarif-mini .extra{ font-size:12px; color:var(--cream-dim); margin-top:3px; }
+  .product-block .btn-primary{ margin-top:24px; }
+  .product-visual{ display:flex; justify-content:center; }
+  .product-visual svg{ width:100%; max-width:330px; height:auto; border-radius:14px; border:1px solid var(--line); }
+
+  @media (max-width:900px){
+    .product-split{ grid-template-columns:1fr; gap:26px; }
+    .product-visual{ order:-1; }
+    .product-visual svg{ max-width:290px; }
+    .product-block{ padding:30px 24px 28px; }
+  }
+
   .family-label{
     font-family:'JetBrains Mono', monospace; font-size:12.5px; color: var(--gold);
     letter-spacing:.1em; text-transform:uppercase; margin-bottom: 16px;
@@ -1025,9 +1076,9 @@
           <a href="#svc-vitrine">Sites web professionnels</a>
           <a href="#svc-menu-dynamique">Site web avec fonctionnalités</a>
           <a href="#svc-ecommerce">Site e-commerce</a>
+          <a href="prise-de-rendez-vous-en-ligne-reunion.html">Outil de réservation en ligne</a>
           <a href="#svc-dashboard">Tableaux de bord</a>
           <a href="#svc-outils-mesure">Outils métier sur mesure</a>
-          <a href="prise-de-rendez-vous-en-ligne-reunion.html">Prise de rendez-vous en ligne</a>
         </div>
       </div>
       <div class="nav-item" data-nav-item>
@@ -1119,7 +1170,7 @@
     </div>
 
     <div class="service-family">
-      <div class="family-label">Site web</div>
+      <div class="family-label">Création de site web</div>
       <div class="services-grid services-grid-3">
         <div class="service-card" id="svc-vitrine">
           <div class="preview">
@@ -1157,7 +1208,64 @@
     </div>
 
     <div class="service-family">
-      <div class="family-label">Outils métier</div>
+      <div class="family-label">Outil de réservation en ligne</div>
+      <div class="product-block" id="svc-reservation">
+        <div class="product-split">
+          <div>
+            <div class="product-name">Pita<span>RDV</span></div>
+            <h3>Vos clients réservent en ligne, vous arrêtez de gérer les messages</h3>
+            <p class="intro">Un outil de prise de rendez-vous pour les salons, instituts et indépendants de La R&eacute;union. Tarif fixe, aucune commission sur vos rendez-vous.</p>
+            <ul class="product-points">
+              <li>Un lien &agrave; partager dans votre bio, sur Google ou en QR code</li>
+              <li>R&eacute;servations 24h/24, confirmation automatique par email</li>
+              <li>Planning, prestations, cong&eacute;s et fiches clients au m&ecirc;me endroit</li>
+              <li>Site vitrine &agrave; votre nom possible, avec votre propre domaine</li>
+            </ul>
+            <div class="product-pricing">
+              <div class="tarif-mini">
+                <div class="lbl">R&eacute;servation seule</div>
+                <div class="val">29 &euro; <small>/ mois</small></div>
+                <div class="extra">Sans mise en service</div>
+              </div>
+              <div class="tarif-mini">
+                <div class="lbl">Site + r&eacute;servation</div>
+                <div class="val">39 &euro; <small>/ mois</small></div>
+                <div class="extra">+ 450 &euro; de mise en service</div>
+              </div>
+            </div>
+            <a href="prise-de-rendez-vous-en-ligne-reunion.html" class="btn-primary">D&eacute;couvrir l'offre compl&egrave;te &rarr;</a>
+          </div>
+          <div class="product-visual" aria-hidden="true">
+            <svg viewBox="0 0 330 250" xmlns="http://www.w3.org/2000/svg">
+              <rect width="330" height="250" fill="#141414"/>
+              <rect x="0" y="0" width="330" height="34" fill="#1f1f1f"/>
+              <circle cx="18" cy="17" r="4" fill="#ec3a80"/>
+              <circle cx="32" cy="17" r="4" fill="#d1a441"/>
+              <circle cx="46" cy="17" r="4" fill="#9bd045"/>
+              <rect x="64" y="13" width="84" height="8" rx="4" fill="#3a3a3a"/>
+              <rect x="18" y="50" width="70" height="8" rx="4" fill="#f4ecdf" opacity=".8"/>
+              <rect x="18" y="70" width="294" height="34" rx="8" fill="#1d1d1d"/>
+              <rect x="28" y="80" width="54" height="6" rx="3" fill="#cfc4b2" opacity=".75"/>
+              <rect x="28" y="91" width="34" height="5" rx="2.5" fill="#6d6d6d"/>
+              <rect x="262" y="82" width="40" height="12" rx="6" fill="#9bd045" opacity=".85"/>
+              <rect x="18" y="112" width="294" height="34" rx="8" fill="#1d1d1d"/>
+              <rect x="28" y="122" width="68" height="6" rx="3" fill="#cfc4b2" opacity=".75"/>
+              <rect x="28" y="133" width="42" height="5" rx="2.5" fill="#6d6d6d"/>
+              <rect x="262" y="124" width="40" height="12" rx="6" fill="#9bd045" opacity=".85"/>
+              <rect x="18" y="154" width="294" height="34" rx="8" fill="#1d1d1d" stroke="#ec3a80" stroke-width="1.5"/>
+              <rect x="28" y="164" width="58" height="6" rx="3" fill="#f4ecdf" opacity=".9"/>
+              <rect x="28" y="175" width="48" height="5" rx="2.5" fill="#8a8a8a"/>
+              <rect x="258" y="166" width="44" height="12" rx="6" fill="#ec3a80"/>
+              <rect x="18" y="200" width="130" height="28" rx="14" fill="#ec3a80"/>
+              <rect x="46" y="210" width="74" height="7" rx="3.5" fill="#1a1a1a" opacity=".65"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-family">
+      <div class="family-label">Autres besoins</div>
       <div class="services-grid">
         <div class="service-card" id="svc-dashboard">
           <div class="preview">
@@ -1175,9 +1283,9 @@
           </div>
           <div class="tag">APPLICATION</div>
           <h3>Outils métier sur mesure</h3>
-          <p>Un besoin précis à automatiser — plannings, stock, réservations, suivi client ? Un outil pensé pour votre quotidien, comme un agenda de rendez-vous pour un salon de coiffure.</p>
+          <p>Un besoin précis à automatiser — gestion de stock, suivi de commandes, plannings d'équipe, suivi client ? Un outil pensé pour votre quotidien, quand aucune solution du marché ne correspond vraiment.</p>
           <button type="button" class="more-toggle">En savoir plus +</button>
-          <div class="more-detail">Exemple concret : agenda de rendez-vous en ligne pour un salon de coiffure — les clients réservent un créneau selon les disponibilités réelles, la gérante voit son planning du jour en un coup d'œil, et reçoit une notification à chaque nouvelle réservation. Compte unique par établissement (pas de comptes multiples par employé), accompagnement à la prise en main inclus, maintenance possible en option.</div>
+          <div class="more-detail">Exemple concret : gestion de commandes en temps réel pour un restaurant — les commandes arrivent en direct sur un écran en cuisine, un clic pour marquer une commande comme terminée, et une notification à chaque nouvelle entrée. Compte unique par établissement, accompagnement à la prise en main inclus, maintenance possible en option.</div>
         </div>
       </div>
     </div>
