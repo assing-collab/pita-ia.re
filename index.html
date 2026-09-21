@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Création de sites internet à La Réunion | PitaIA</title>
+<title>Création de site web à La Réunion | PitaIA</title>
 <meta name="robots" content="index, follow">
 <meta name="google-site-verification" content="InvZhu1zw5Zk_YDRL1pzppMMk6YYf_CPinPUCFLicaY" />
-<meta name="description" content="Création de sites internet professionnels à La Réunion : sites vitrines, e-commerce, menus digitaux et outils métier sur mesure avec PitaIA.">
+<meta name="description" content="PitaIA crée des sites internet professionnels, des solutions de réservation en ligne et des outils numériques sur mesure pour les entreprises de La Réunion.">
 <link rel="canonical" href="https://pita-ia.re/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PitaIA">
-<meta property="og:title" content="Création de sites internet à La Réunion | PitaIA">
-<meta property="og:description" content="Création de sites internet professionnels à La Réunion : sites vitrines, e-commerce, menus digitaux et outils métier sur mesure avec PitaIA.">
+<meta property="og:title" content="Création de site web à La Réunion | PitaIA">
+<meta property="og:description" content="PitaIA crée des sites internet professionnels, des solutions de réservation en ligne et des outils numériques sur mesure pour les entreprises de La Réunion.">
 <meta property="og:url" content="https://pita-ia.re/">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:image" content="https://pita-ia.re/og-image.jpg">
@@ -20,8 +20,8 @@
 <meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Création de sites internet à La Réunion | PitaIA">
-<meta name="twitter:description" content="Création de sites internet professionnels à La Réunion : sites vitrines, e-commerce, menus digitaux et outils métier sur mesure avec PitaIA.">
+<meta name="twitter:title" content="Création de site web à La Réunion | PitaIA">
+<meta name="twitter:description" content="PitaIA crée des sites internet professionnels, des solutions de réservation en ligne et des outils numériques sur mesure pour les entreprises de La Réunion.">
 <meta name="twitter:image" content="https://pita-ia.re/og-image.jpg">
 
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -45,7 +45,7 @@
       "name": "PitaIA",
       "url": "https://pita-ia.re/",
       "email": "contact@pita-ia.re",
-      "description": "Création de sites internet professionnels à La Réunion : sites vitrines, e-commerce, menus digitaux et outils métier sur mesure avec PitaIA."
+      "description": "PitaIA crée des sites internet professionnels, des solutions de réservation en ligne et des outils numériques sur mesure pour les entreprises de La Réunion."
     },
     {
       "@type": "WebSite",
@@ -59,7 +59,7 @@
       "@type": "LocalBusiness",
       "@id": "https://pita-ia.re/#localbusiness",
       "name": "PitaIA",
-      "description": "Création de sites internet professionnels à La Réunion : sites vitrines, e-commerce, menus digitaux et outils métier sur mesure avec PitaIA.",
+      "description": "PitaIA crée des sites internet professionnels, des solutions de réservation en ligne et des outils numériques sur mesure pour les entreprises de La Réunion.",
       "url": "https://pita-ia.re/",
       "email": "contact@pita-ia.re",
       "areaServed": [
@@ -302,13 +302,17 @@
     background: var(--bg-soft);
   }
   .stat-strip .wrap{
-    display:grid; grid-template-columns: repeat(3,1fr);
-    padding: 34px 28px;
+    display:grid; grid-template-columns: repeat(4,1fr);
+    padding: 30px 28px;
   }
-  .stat{ text-align:center; border-left: 1px solid var(--line); }
+  .stat{ text-align:center; border-left: 1px solid var(--line); padding: 0 14px; }
   .stat:first-child{ border-left:none; }
-  .stat .num{ font-family:'Fraunces',serif; font-size: 30px; color: var(--lime); }
-  .stat .lbl{ font-size: 13px; color: var(--cream-dim); margin-top:4px; }
+  .stat .num{ font-family:'Fraunces',serif; font-size: 17px; color: var(--cream); font-weight:600; }
+  .stat .lbl{ font-size: 12.5px; color: var(--cream-dim); margin-top:6px; line-height:1.4; }
+  @media (max-width: 760px){
+    .stat-strip .wrap{ grid-template-columns: repeat(2,1fr); gap:22px 0; }
+    .stat:nth-child(3){ border-left:none; }
+  }
 
   /* SECTION generic */
   section{ padding: 110px 0; }
@@ -325,8 +329,33 @@
     display:grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
   }
   .services-grid-3{ grid-template-columns: repeat(3, 1fr); }
+  .services-grid-4{ grid-template-columns: repeat(4, 1fr); }
   @media (max-width: 980px){
     .services-grid-3{ grid-template-columns: repeat(2, 1fr); }
+    .services-grid-4{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 620px){
+    .services-grid-4{ grid-template-columns: 1fr; }
+  }
+  .service-card-highlight{
+    border-color: var(--pink);
+    background: linear-gradient(180deg, rgba(236,58,128,0.08), var(--card) 44%);
+  }
+  .cible-card{
+    background: var(--card); border:1px solid var(--line); border-radius:18px;
+    padding:26px 24px;
+  }
+  .cible-card h3{ font-size:17px; color:var(--cream); margin-bottom:8px; }
+  .cible-card p{ font-size:14px; color:var(--cream-dim); }
+  .product-points-2col{ display:grid; grid-template-columns:1fr 1fr; gap:9px 20px; }
+  @media (max-width:560px){ .product-points-2col{ grid-template-columns:1fr; } }
+  .service-card .price{
+    font-family:'Fraunces', serif; font-size:20px; color:var(--cream);
+    margin-top:14px; margin-bottom:6px;
+  }
+  .service-card .price .from{
+    font-family:'Inter', sans-serif; font-size:12px; color:var(--cream-dim);
+    display:block; font-weight:400;
   }
   .service-card{
     background: var(--card);
@@ -387,6 +416,8 @@
   .tarif-mini .val small{ font-family:'Inter',sans-serif; font-size:12.5px; color:var(--cream-dim); font-weight:400; }
   .tarif-mini .extra{ font-size:12px; color:var(--cream-dim); margin-top:3px; }
   .product-block .btn-primary{ margin-top:24px; }
+  .product-block .head-cta .btn-primary{ margin-top:0; }
+  .product-block .head-cta button.btn-ghost{ cursor:pointer; font-family:inherit; }
   .product-visual{ display:flex; justify-content:center; }
   .product-visual img{ width:100%; max-width:440px; height:auto; display:block; }
 
@@ -693,6 +724,16 @@
   .helper-cta p{ margin-top: 10px; color: var(--cream-dim); font-size: 15px; max-width: 52ch; margin-left:auto; margin-right:auto; }
   .helper-cta .btn-primary{ margin-top: 22px; }
 
+  .final-cta{
+    max-width:640px; margin:0 auto; text-align:center; padding:20px 0;
+  }
+  .final-cta h2{ font-size:clamp(28px,4vw,40px); color:var(--cream); }
+  .final-cta > p{ margin-top:14px; color:var(--cream-dim); font-size:16.5px; }
+  .final-cta .btn-primary{ margin-top:26px; font-size:15.5px; padding:16px 30px; }
+  .final-cta-note{
+    margin-top:18px; font-size:13px; color:var(--cream-dim); opacity:.85;
+  }
+
   /* Grille tarifaire — offres orientées besoin */
   .price-card .price-desc{ margin-top: 10px; font-size: 13.5px; color: var(--cream-dim); line-height: 1.55; }
   .price-card .price-examples{
@@ -848,6 +889,28 @@
   .footer-legal{ display:flex; gap:18px; flex-wrap:wrap; }
   .footer-legal a{ color: var(--cream-dim); text-decoration:none; }
   .footer-legal a:hover{ color: var(--cream); }
+
+  .footer-columns{
+    display:grid; grid-template-columns: 1.3fr 1fr 1fr; gap:36px;
+    padding: 50px 0 36px;
+  }
+  .footer-col .footer-logo{
+    display:flex; align-items:center; gap:9px;
+    font-family:'Fraunces', serif; font-weight:700; font-size:19px; color:var(--cream);
+  }
+  .footer-col .footer-logo img{ width:24px; height:24px; border-radius:5px; }
+  .footer-col .footer-tagline{ margin-top:12px; font-size:13.5px; color:var(--cream-dim); max-width:32ch; }
+  .footer-col h4{
+    font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--gold); margin-bottom:14px;
+  }
+  .footer-col ul{ list-style:none; display:flex; flex-direction:column; gap:9px; }
+  .footer-col ul a{ color:var(--cream-dim); text-decoration:none; font-size:14px; }
+  .footer-col ul a:hover{ color:var(--cream); }
+  @media (max-width:760px){
+    .footer-columns{ grid-template-columns: 1fr 1fr; gap:28px 20px; }
+    .footer-col:first-child{ grid-column: 1 / -1; margin-bottom:6px; }
+  }
 
   .price-family{ margin-bottom: 56px; }
   .price-family:last-child{ margin-bottom: 0; }
@@ -1071,24 +1134,23 @@
     </div>
     <div class="nav-links">
       <div class="nav-item" data-nav-item>
-        <button type="button" class="nav-trigger" data-nav-trigger>Services <span class="chev">▾</span></button>
+        <button type="button" class="nav-trigger" data-nav-trigger>Solutions <span class="chev">▾</span></button>
         <div class="nav-dropdown">
-          <a href="#svc-vitrine">Sites web professionnels</a>
-          <a href="#svc-menu-dynamique">Site web avec fonctionnalités</a>
-          <a href="#svc-ecommerce">Site e-commerce</a>
-          <a href="prise-de-rendez-vous-en-ligne-reunion.html">Outil de réservation en ligne</a>
-          <a href="#svc-dashboard">Tableaux de bord</a>
-          <a href="#svc-outils-mesure">Outils métier sur mesure</a>
+          <a href="#svc-vitrine">Site internet</a>
+          <a href="#reservation">Réservation en ligne</a>
+          <a href="#svc-ecommerce">E-commerce</a>
+          <a href="#svc-sur-mesure">Sur mesure</a>
         </div>
       </div>
+      <a class="navlink" href="#reservation">Réservation en ligne</a>
+      <a class="navlink" href="creation-site-web-reunion.html">Réalisations</a>
       <div class="nav-item" data-nav-item>
         <button type="button" class="nav-trigger" data-nav-trigger>Tarifs <span class="chev">▾</span></button>
         <div class="nav-dropdown">
-          <a href="#price-site-web">Site web</a>
-          <a href="#price-sur-mesure">Sur mesure</a>
+          <a href="#price-site-web">Sites internet</a>
+          <a href="#reservation">Pita RDV</a>
         </div>
       </div>
-      <a class="navlink" href="creation-site-web-reunion.html">Démonstrations</a>
       <a class="navlink" href="faq.html">FAQ</a>
     </div>
     <button type="button" class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
@@ -1096,11 +1158,10 @@
     </button>
   </div>
   <div class="mobile-menu" id="mobileMenu" hidden>
-    <a class="mobile-menu-link" href="#services">Services</a>
-    <a class="mobile-menu-link" href="services.html">Services (détail)</a>
+    <a class="mobile-menu-link" href="#services">Solutions</a>
+    <a class="mobile-menu-link" href="#reservation">Réservation en ligne</a>
+    <a class="mobile-menu-link" href="creation-site-web-reunion.html">Réalisations</a>
     <a class="mobile-menu-link" href="#tarifs">Tarifs</a>
-    <a class="mobile-menu-link" href="prise-de-rendez-vous-en-ligne-reunion.html">Prise de rendez-vous</a>
-    <a class="mobile-menu-link" href="creation-site-web-reunion.html">Démonstrations</a>
     <a class="mobile-menu-link" href="faq.html">FAQ</a>
     <a class="mobile-menu-link mobile-menu-cta" href="#contact">Parler de mon projet →</a>
   </div>
@@ -1121,25 +1182,24 @@
   </div>
   <div class="wrap">
     <div class="eyebrow">
-      Prestataire web rapide · La Réunion
+      Création web · Réunion
       <svg class="icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M11 14 C10 10 14 7 19 7 C24 7 26 9 29 8 C32 7 33 10 31 13 C34 14 33 18 30 18 C32 21 29 24 26 22 C25 26 20 27 18 24 C14 26 10 23 12 19 C8 18 8 15 11 14 Z"
           fill="none" stroke="#ec3a80" stroke-width="1.6" stroke-linejoin="round"/>
         <circle cx="22" cy="15" r="1.8" fill="#9bd045"/>
       </svg>
     </div>
-    <h1>Création de sites internet professionnels à La Réunion</h1>
-    <p class="hero-tagline">Un site qui travaille pour votre entreprise, <em>pas juste une jolie vitrine</em>.</p>
-    <p class="lead">Pita<strong style="color:var(--pink); font-weight:700;">IA</strong> conçoit des sites vitrines, des menus digitaux, des systèmes de commande, de l'e-commerce et des outils métier sur mesure pour les commerces et entreprises de La Réunion. Des solutions web conçues rapidement grâce à l'intelligence artificielle, avec un accompagnement humain et direct du premier échange à la mise en ligne.</p>
+    <h1>Votre activité mérite plus qu'un simple site internet.</h1>
+    <p class="lead">PitaIA crée des sites internet professionnels, des solutions de réservation en ligne et des outils numériques adaptés aux besoins des entreprises de La Réunion.</p>
     <div class="hero-badges">
-      <span class="hero-badge">Devis gratuit</span>
-      <span class="hero-badge">Démo avant paiement</span>
-      <span class="hero-badge">Mobile-first</span>
-      <span class="hero-badge">SEO inclus</span>
+      <span class="hero-badge">Démo concrète avant engagement</span>
+      <span class="hero-badge">Design adapté à votre activité</span>
+      <span class="hero-badge">Pensé pour mobile</span>
+      <span class="hero-badge">Accompagnement local</span>
     </div>
     <div class="hero-cta">
-      <a href="#contact" class="btn-primary">Parler de mon projet →</a>
-      <a href="#services" class="btn-ghost">Voir les solutions</a>
+      <a href="#services" class="btn-primary">Découvrir les solutions</a>
+      <a href="#contact" class="btn-ghost">Parler de mon projet →</a>
     </div>
   </div>
 </header>
@@ -1147,16 +1207,20 @@
 <div class="stat-strip">
   <div class="wrap">
     <div class="stat">
-      <div class="num">100%</div>
-      <div class="lbl">sur mesure, rien de préfabriqué</div>
+      <div class="num">Site internet</div>
+      <div class="lbl">Présentez votre activité avec une présence professionnelle.</div>
     </div>
     <div class="stat">
-      <div class="num">Rapide</div>
-      <div class="lbl">une démo concrète dès la 1ère rencontre</div>
+      <div class="num">Réservation en ligne</div>
+      <div class="lbl">Laissez vos clients prendre rendez-vous 24h/24.</div>
     </div>
     <div class="stat">
-      <div class="num">Local</div>
-      <div class="lbl">basé à La Réunion, à votre écoute</div>
+      <div class="num">Vente en ligne</div>
+      <div class="lbl">Présentez et vendez vos produits directement sur Internet.</div>
+    </div>
+    <div class="stat">
+      <div class="num">Outil sur mesure</div>
+      <div class="lbl">Digitalisez une tâche ou un processus spécifique à votre entreprise.</div>
     </div>
   </div>
 </div>
@@ -1164,112 +1228,138 @@
 <section id="services">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Ce que je propose</div>
-      <h2>Nos solutions web à La Réunion</h2>
-      <p>Chaque projet part de votre activité réelle, pas d'un modèle tout fait. Voici les types de solutions que je construis pour vous.</p>
+      <div class="eyebrow">Nos solutions</div>
+      <h2>Tout ce dont votre activité a besoin pour passer au numérique.</h2>
+      <p>Que vous ayez besoin d'un site pour présenter votre entreprise, d'un système de réservation ou d'un outil développé spécialement pour votre activité, PitaIA construit une solution adaptée à votre fonctionnement.</p>
     </div>
 
-    <div class="service-family">
-      <div class="family-label">Création de site web</div>
-      <div class="services-grid services-grid-3">
-        <div class="service-card" id="svc-vitrine">
-          <div class="preview">
-            <img src="https://images.pexels.com/photos/890065/pexels-photo-890065.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Site vitrine professionnel pour commerce à La Réunion" width="800" height="600" loading="eager">
-          </div>
-          <div class="tag">VITRINE</div>
-          <h3>Sites web professionnels</h3>
-          <p>Vos clients ne trouvent pas facilement vos infos, vos horaires ou vos services ? Un site clair qui présente votre activité et donne confiance dès la première visite, sur mobile comme sur ordinateur.</p>
-          <button type="button" class="more-toggle">En savoir plus +</button>
-          <div class="more-detail">Structure one-page (jusqu'à 5 sections), design responsive adapté mobile/tablette/desktop, formulaire de contact ou lien WhatsApp direct, nom de domaine et hébergement inclus la 1ère année, temps de chargement optimisé et référencement de base (balises meta, sitemap).</div>
-          <button type="button" class="demo-link" data-demo="https://magnificent-pothos-8e05f0.netlify.app">Voir un exemple →</button>
+    <div class="services-grid services-grid-4">
+      <div class="service-card" id="svc-vitrine">
+        <div class="preview">
+          <img src="https://images.pexels.com/photos/890065/pexels-photo-890065.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Site vitrine professionnel pour commerce à La Réunion" width="800" height="600" loading="eager">
         </div>
-        <div class="service-card" id="svc-menu-dynamique">
-          <div class="preview">
-            <img src="https://images.pexels.com/photos/12725448/pexels-photo-12725448.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Espace de commande en ligne pour restaurant à La Réunion" width="800" height="600" loading="lazy">
-          </div>
-          <div class="tag">FONCTIONNALITÉS</div>
-          <h3>Site web avec fonctionnalités</h3>
-          <p>Besoin de plus qu'une simple vitrine ? Prise de rendez-vous, commande en ligne, formulaire avancé — ajoutez la fonctionnalité dont votre activité a besoin pour que vos clients puissent agir directement depuis votre site.</p>
-          <button type="button" class="more-toggle">En savoir plus +</button>
-          <div class="more-detail">Espace privé de gestion (sans code) pour publier un menu, un catalogue ou gérer des disponibilités, mise à jour immédiate sur le site. Fonctionnalité adaptée à votre activité — réservation, commande en ligne, formulaire dédié — avec notifications par WhatsApp, email ou, selon le projet, SMS.</div>
-          <button type="button" class="demo-link" data-demo="https://darling-rugelach-d055d9.netlify.app">Voir un exemple →</button>
+        <div class="tag">SITE INTERNET</div>
+        <h3>Un site professionnel qui vous ressemble</h3>
+        <p>Présentez votre entreprise, vos services et vos réalisations avec un site moderne, rapide et adapté à tous les écrans.</p>
+        <div class="price"><span class="from">À partir de</span>690 €</div>
+        <button type="button" class="demo-link" data-demo="https://magnificent-pothos-8e05f0.netlify.app">Découvrir →</button>
+      </div>
+
+      <div class="service-card service-card-highlight" id="svc-reservation-teaser">
+        <div class="preview">
+          <img src="pita-rdv-mockup.png" alt="Aperçu de l'outil Pita RDV" width="1536" height="1024" loading="lazy">
         </div>
-        <div class="service-card" id="svc-ecommerce">
-          <div class="preview">
-            <img src="https://images.pexels.com/photos/17485348/pexels-photo-17485348.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Statistiques de boutique en ligne affichées sur un écran d'ordinateur" width="800" height="600" loading="lazy">
-          </div>
-          <div class="tag">E-COMMERCE</div>
-          <h3>Site e-commerce</h3>
-          <p>Vous voulez vendre en ligne sans dépendre d'une marketplace ? Une vraie boutique à vous : catalogue, paiement sécurisé, et un back-office simple pour tout gérer au quotidien.</p>
-          <button type="button" class="more-toggle">En savoir plus +</button>
-          <div class="more-detail">Catalogue produits illimité avec photos, prix, description et variantes (couleur/taille), panier et tunnel de commande optimisé mobile, paiement sécurisé via Stripe ou PayPal (commission du prestataire de paiement non incluse), back-office pour gérer vos produits sans toucher au code, gestion simple des stocks (disponible/rupture).</div>
+        <div class="tag">RÉSERVATION EN LIGNE</div>
+        <h3>Vos clients réservent. Vous gagnez du temps.</h3>
+        <p>Permettez à vos clients de consulter vos prestations, choisir un créneau et réserver directement en ligne — salons, instituts, professionnels de beauté, kinés, ostéopathes et tout professionnel travaillant sur rendez-vous.</p>
+        <a href="#reservation" class="btn-ghost">Découvrir Pita RDV →</a>
+      </div>
+
+      <div class="service-card" id="svc-ecommerce">
+        <div class="preview">
+          <img src="https://images.pexels.com/photos/17485348/pexels-photo-17485348.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Statistiques de boutique en ligne affichées sur un écran d'ordinateur" width="800" height="600" loading="lazy">
         </div>
+        <div class="tag">E-COMMERCE</div>
+        <h3>Vendez vos produits directement en ligne</h3>
+        <p>Une boutique adaptée à votre activité pour présenter vos produits, gérer vos commandes et proposer le paiement en ligne.</p>
+        <div class="price"><span class="from">À partir de</span>1 500 €</div>
+        <button type="button" class="more-toggle">En savoir plus +</button>
+        <div class="more-detail">Catalogue produits illimité avec photos, prix, description et variantes (couleur/taille), panier et tunnel de commande optimisé mobile, paiement sécurisé via Stripe ou PayPal (commission du prestataire de paiement non incluse), back-office pour gérer vos produits sans toucher au code.</div>
+      </div>
+
+      <div class="service-card" id="svc-sur-mesure">
+        <div class="preview">
+          <img src="https://images.pexels.com/photos/5125366/pexels-photo-5125366.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Application métier sur mesure développée pour un commerce" width="800" height="600" loading="lazy">
+        </div>
+        <div class="tag">SUR MESURE</div>
+        <h3>Votre besoin ne rentre dans aucune case ?</h3>
+        <p>Tableau de bord, planning, gestion de commandes, espace client, automatisation ou application métier : développons l'outil dont votre entreprise a réellement besoin.</p>
+        <a href="#contact" class="btn-ghost">Parler de mon projet →</a>
       </div>
     </div>
 
-    <div class="service-family">
-      <div class="family-label">Outil de réservation en ligne</div>
-      <div class="product-block" id="svc-reservation">
-        <div class="product-split">
-          <div>
-            <div class="product-name">Pita<span>RDV</span></div>
-            <h3>Vos clients réservent en ligne, vous arrêtez de gérer les messages</h3>
-            <p class="intro">Un outil de prise de rendez-vous pour les salons, instituts et indépendants de La R&eacute;union. Tarif fixe, aucune commission sur vos rendez-vous.</p>
-            <ul class="product-points">
-              <li>Un lien &agrave; partager dans votre bio, sur Google ou en QR code</li>
-              <li>R&eacute;servations 24h/24, confirmation automatique par email</li>
-              <li>Planning, prestations, cong&eacute;s et fiches clients au m&ecirc;me endroit</li>
-              <li>Site vitrine &agrave; votre nom possible, avec votre propre domaine</li>
-            </ul>
-            <div class="product-pricing">
-              <div class="tarif-mini">
-                <div class="lbl">R&eacute;servation seule</div>
-                <div class="val">29 &euro; <small>/ mois</small></div>
-                <div class="extra">Sans mise en service</div>
-              </div>
-              <div class="tarif-mini">
-                <div class="lbl">Site + r&eacute;servation</div>
-                <div class="val">39 &euro; <small>/ mois</small></div>
-                <div class="extra">+ 450 &euro; de mise en service</div>
-              </div>
-            </div>
-            <a href="prise-de-rendez-vous-en-ligne-reunion.html" class="btn-primary">D&eacute;couvrir l'offre compl&egrave;te &rarr;</a>
-          </div>
-          <div class="product-visual" aria-hidden="true">
-            <img src="pita-rdv-mockup.png" alt="Aperçu de l'outil Pita RDV sur ordinateur, tablette et mobile" width="1536" height="1024" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="service-family">
-      <div class="family-label">Autres besoins</div>
-      <div class="services-grid">
-        <div class="service-card" id="svc-dashboard">
-          <div class="preview">
-            <img src="https://images.pexels.com/photos/10653886/pexels-photo-10653886.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Graphiques et données affichés sur un écran" width="800" height="600" loading="lazy">
-          </div>
-          <div class="tag">PILOTAGE</div>
-          <h3>Tableaux de bord</h3>
-          <p>Vos chiffres sont éparpillés entre plusieurs fichiers ? Visualisez ventes, activité et indicateurs clés au même endroit, en un coup d'œil.</p>
-          <button type="button" class="more-toggle">En savoir plus +</button>
-          <div class="more-detail">Construit à partir de vos données existantes ou connecté pour rester à jour en continu, selon votre besoin. Graphiques et indicateurs clés adaptés à votre activité, filtres et périodes personnalisables si un suivi régulier est nécessaire (ventes, réservations, stock...). Le niveau d'interactivité se décide ensemble lors du premier échange.</div>
-        </div>
-        <div class="service-card" id="svc-outils-mesure">
-          <div class="preview">
-            <img src="https://images.pexels.com/photos/5125366/pexels-photo-5125366.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Application métier sur mesure développée pour un commerce" width="800" height="600" loading="lazy">
-          </div>
-          <div class="tag">APPLICATION</div>
-          <h3>Outils métier sur mesure</h3>
-          <p>Un besoin précis à automatiser — gestion de stock, suivi de commandes, plannings d'équipe, suivi client ? Un outil pensé pour votre quotidien, quand aucune solution du marché ne correspond vraiment.</p>
-          <button type="button" class="more-toggle">En savoir plus +</button>
-          <div class="more-detail">Exemple concret : gestion de commandes en temps réel pour un restaurant — les commandes arrivent en direct sur un écran en cuisine, un clic pour marquer une commande comme terminée, et une notification à chaque nouvelle entrée. Compte unique par établissement, accompagnement à la prise en main inclus, maintenance possible en option.</div>
-        </div>
-      </div>
-    </div>
     <p style="text-align:center; margin-top:40px;">
       <a href="services.html" class="btn-ghost">Voir le détail complet des services →</a>
     </p>
+  </div>
+</section>
+
+<section id="reservation" class="alt-bg">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pita RDV</div>
+      <h2>Arrêtez de gérer vos rendez-vous dans les messages.</h2>
+      <p>Vos clients peuvent réserver directement en ligne, 24h/24, depuis leur téléphone, votre site ou un simple lien partagé sur vos réseaux sociaux.</p>
+    </div>
+
+    <div class="product-block">
+      <div class="product-split">
+        <div class="product-visual" aria-hidden="true">
+          <img src="pita-rdv-mockup.png" alt="Aperçu de l'outil Pita RDV sur ordinateur, tablette et mobile" width="1536" height="1024" loading="lazy">
+        </div>
+        <div>
+          <div class="product-name">Pita<span>RDV</span></div>
+          <h3>Tout est centralisé</h3>
+          <ul class="product-points product-points-2col">
+            <li>Vos prestations</li>
+            <li>Vos tarifs</li>
+            <li>Vos disponibilités</li>
+            <li>Vos employés</li>
+            <li>Vos horaires</li>
+            <li>Vos congés</li>
+            <li>Vos créneaux bloqués</li>
+            <li>Vos rendez-vous</li>
+            <li>Vos clients</li>
+            <li>Confirmation automatique par email</li>
+          </ul>
+          <p class="intro" style="margin-top:20px;">Une vraie page de réservation à votre nom, adaptée à votre activité.</p>
+          <div class="product-pricing">
+            <div class="tarif-mini">
+              <div class="lbl">Réservation seule</div>
+              <div class="val">29 € <small>/ mois</small></div>
+              <div class="extra">Sans mise en service</div>
+            </div>
+            <div class="tarif-mini">
+              <div class="lbl">Site + réservation</div>
+              <div class="val">39 € <small>/ mois</small></div>
+              <div class="extra">+ 450 € de mise en service</div>
+            </div>
+          </div>
+          <div class="head-cta" style="margin-top:22px; display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="prise-de-rendez-vous-en-ligne-reunion.html" class="btn-primary">Voir Pita RDV →</a>
+            <button type="button" class="btn-ghost demo-link" data-demo="https://darling-rugelach-d055d9.netlify.app">Voir la démonstration →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cibles">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pour qui</div>
+      <h2>Pensé pour les professionnels qui veulent simplifier leur quotidien.</h2>
+    </div>
+    <div class="services-grid services-grid-4">
+      <div class="cible-card">
+        <h3>Coiffeurs &amp; salons</h3>
+        <p>Gérez vos prestations, employés, horaires et rendez-vous au même endroit.</p>
+      </div>
+      <div class="cible-card">
+        <h3>Instituts &amp; professionnels de beauté</h3>
+        <p>Permettez à vos clientes de réserver facilement leurs prestations en ligne.</p>
+      </div>
+      <div class="cible-card">
+        <h3>Professions sur rendez-vous</h3>
+        <p>Proposez une prise de rendez-vous simple à vos patients ou clients.</p>
+      </div>
+      <div class="cible-card">
+        <h3>Commerces &amp; entreprises</h3>
+        <p>Présentez votre activité, développez votre visibilité et digitalisez vos processus.</p>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:30px; color:var(--cream-dim); font-size:15px;">Votre activité est différente ? PitaIA peut aussi développer une solution adaptée à votre fonctionnement.</p>
   </div>
 </section>
 
@@ -1278,9 +1368,9 @@
     <a href="creation-site-web-reunion.html" class="demo-teaser" aria-label="Voir toutes nos démonstrations de sites web">
       <div class="demo-teaser-inner">
         <div class="demo-teaser-text">
-          <div class="eyebrow">Exemples de projets</div>
-          <h3>Voyez à quoi pourrait ressembler votre site</h3>
-          <p>Restaurant, salon de coiffure, commerce, tableau de bord — des démonstrations complètes, navigables comme de vrais sites.</p>
+          <div class="eyebrow">Réalisations</div>
+          <h3>Voyez avant de vous décider</h3>
+          <p>Pas besoin d'imaginer à quoi votre projet pourrait ressembler — découvrez des démonstrations concrètes de solutions développées par PitaIA.</p>
           <span class="demo-teaser-cta">Voir les démonstrations →</span>
           <div class="demo-teaser-count">4 exemples · démos fictives</div>
         </div>
@@ -1354,24 +1444,7 @@
 
     <div class="price-family" id="price-site-web">
       <div class="family-label">Site web</div>
-      <div class="pricing-grid pricing-grid-4">
-        <div class="price-card">
-          <div class="ptag">LANDING</div>
-          <h3>Landing page</h3>
-          <div class="price"><span class="from">À partir de</span>490 € <span>unique</span></div>
-          <div class="price-pitch">Une page unique, pensée pour convertir sur un objectif précis.</div>
-          <p class="price-desc">Idéal pour promouvoir un produit, un événement ou une offre spécifique, avec un seul objectif : donner envie de passer à l'action.</p>
-          <ul class="feature-grid">
-            <li>1 page unique, design sur mesure</li>
-            <li>Version responsive (mobile, tablette, ordinateur)</li>
-            <li>Un seul appel à l'action clair (devis, contact, réservation...)</li>
-            <li>Nom de domaine et hébergement inclus</li>
-            <li>Certificat SSL et SEO de base</li>
-            <li>Mise en ligne incluse</li>
-          </ul>
-          <a href="#contact" class="btn-ghost">Créer ma landing page</a>
-        </div>
-
+      <div class="pricing-grid">
         <div class="price-card">
           <div class="ptag">VITRINE</div>
           <h3>Site vitrine</h3>
@@ -1461,29 +1534,16 @@
       </div>
     </div>
 
-    <div class="price-family" id="price-sur-mesure">
+    <div class="price-family" id="price-sur-mesure-tarif">
       <div class="family-label">Sur mesure</div>
-      <div class="pricing-grid pricing-grid-2">
-        <div class="price-card">
-          <div class="ptag">PILOTAGE</div>
-          <h3>Tableau de bord</h3>
-          <div class="price"><span class="from">Sur devis</span></div>
-          <ul>
-            <li>Construit à partir de vos données existantes ou mises à jour régulièrement, selon votre besoin</li>
-            <li>Graphiques et indicateurs clés adaptés à votre activité</li>
-            <li>Filtres et périodes personnalisables si un suivi continu est nécessaire</li>
-            <li>1 aller-retour de modifications</li>
-          </ul>
-          <a href="#contact" class="btn-ghost">Demander un devis</a>
-        </div>
-
+      <div class="pricing-grid pricing-grid-1">
         <div class="price-card">
           <div class="ptag">SUR MESURE</div>
-          <h3>Application métier sur mesure</h3>
+          <h3>Application ou outil sur mesure</h3>
           <div class="price"><span class="from">Sur devis</span></div>
           <ul>
             <li>Application développée sur mesure pour un besoin précis</li>
-            <li>Ex. gestion de planning et rendez-vous pour un salon de coiffure</li>
+            <li>Ex. tableau de bord et indicateurs clés, gestion de planning et rendez-vous, suivi de commandes</li>
             <li>Compte unique par établissement</li>
             <li>Accompagnement et prise en main incluse</li>
             <li>Maintenance possible en option</li>
@@ -1533,28 +1593,28 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Notre approche</div>
-      <h2>Pourquoi travailler directement avec PitaIA ?</h2>
+      <h2>Un interlocuteur unique, du premier échange à la mise en ligne.</h2>
     </div>
     <div class="why-grid">
       <div class="why-card">
         <div class="why-idx">01</div>
-        <h3>Un seul interlocuteur</h3>
-        <p>Vous échangez directement avec la personne qui conçoit et développe votre projet.</p>
+        <h3>Direct</h3>
+        <p>Vous échangez directement avec la personne qui conçoit votre projet.</p>
       </div>
       <div class="why-card">
         <div class="why-idx">02</div>
-        <h3>Des décisions rapides</h3>
-        <p>Pas de chaîne de validation ni d'intermédiaire entre votre demande et sa mise en œuvre.</p>
+        <h3>Sur mesure</h3>
+        <p>Pas de modèle imposé : la solution est construite autour de votre activité.</p>
       </div>
       <div class="why-card">
         <div class="why-idx">03</div>
-        <h3>Une démo avant de s'engager</h3>
-        <p>Vous voyez concrètement la direction du projet avant de vous lancer.</p>
+        <h3>Concret</h3>
+        <p>Vous pouvez découvrir une démonstration avant de vous engager.</p>
       </div>
       <div class="why-card">
         <div class="why-idx">04</div>
-        <h3>Un accompagnement local</h3>
-        <p>PitaIA est basé à La Réunion et peut échanger à distance ou en personne.</p>
+        <h3>Local</h3>
+        <p>PitaIA est basé à La Réunion et accompagne les professionnels du territoire.</p>
       </div>
     </div>
   </div>
@@ -1564,20 +1624,36 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Questions fréquentes</div>
-      <h2>Avant de vous lancer</h2>
+      <h2>Vos questions, nos réponses</h2>
     </div>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-q">Combien coûte la création d'un site internet à La Réunion ?</div>
-        <div class="faq-a">Les tarifs démarrent à 490 € pour une landing page, 690 € pour un site vitrine, 890 € pour un site avec fonctionnalités (réservation, commande en ligne...) et 1 500 € pour une boutique e-commerce. Un devis précis vous est toujours remis avant de commencer.</div>
+        <div class="faq-q">Combien coûte un site internet ?</div>
+        <div class="faq-a">Les projets commencent à 690 € pour un site vitrine. Le prix final dépend du contenu et des fonctionnalités souhaitées.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Le site est-il adapté aux smartphones ?</div>
-        <div class="faq-a">Oui, tous les sites créés par PitaIA sont conçus pour s'afficher parfaitement sur mobile, tablette et ordinateur.</div>
+        <div class="faq-q">Le site est-il adapté aux téléphones ?</div>
+        <div class="faq-a">Oui. Tous les sites PitaIA sont conçus pour fonctionner sur smartphone, tablette et ordinateur.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Combien de temps pour avoir mon site ?</div>
-        <div class="faq-a">Un site vitrine est généralement prêt en 1 à 2 semaines, un espace de commande en 2 à 3 semaines. Le délai précis dépend de la rapidité avec laquelle vous me fournissez vos visuels.</div>
+        <div class="faq-q">Puis-je avoir mon propre nom de domaine ?</div>
+        <div class="faq-a">Oui. Votre domaine peut être utilisé pour votre site et, selon le projet, pour votre système de réservation.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Est-ce que je peux réserver en ligne sans avoir de site ?</div>
+        <div class="faq-a">Oui. Pita RDV peut fonctionner avec une page de réservation indépendante que vous pouvez partager sur Instagram, Facebook, Google ou via un QR code.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Puis-je avoir un site avec réservation ?</div>
+        <div class="faq-a">Oui. Le site et la réservation peuvent être intégrés dans une même solution.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Est-ce que vous travaillez uniquement avec les salons de beauté ?</div>
+        <div class="faq-a">Non. PitaIA accompagne également les commerces, restaurants, indépendants, professionnels de santé et entreprises ayant besoin d'une solution numérique adaptée.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Combien de temps faut-il pour créer un site ?</div>
+        <div class="faq-a">Le délai dépend du projet. Un site vitrine simple peut généralement être réalisé en quelques jours à quelques semaines selon le contenu et les demandes.</div>
       </div>
     </div>
     <p style="text-align:center; margin-top:30px;">
@@ -1755,6 +1831,18 @@
   </div>
 </section>
 
+<section class="alt-bg" style="padding-bottom:70px;">
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>Vous avez un projet en tête ?</h2>
+      <p>Site internet, réservation en ligne ou outil sur mesure : expliquez-moi simplement ce dont vous avez besoin.</p>
+      <p style="font-style:italic; color:var(--cream-dim); margin-top:8px;">Pas besoin de connaître la technique.</p>
+      <a href="#contact" class="btn-primary">Parler de mon projet →</a>
+      <p class="final-cta-note">Premier échange gratuit · Devis clair · Démonstration possible avant engagement</p>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="wrap">
     <div class="contact-panel">
@@ -1783,20 +1871,20 @@
           <input type="text" name="contact_info" placeholder="Comment vous joindre">
         </div>
         <div class="field">
-          <label>TYPE DE PROJET</label>
+          <label>QUE RECHERCHEZ-VOUS ?</label>
           <select name="type_projet">
             <option value="">Sélectionnez une option</option>
-            <option value="Site vitrine">Site vitrine</option>
-            <option value="Menu / commande en ligne">Menu / commande en ligne</option>
+            <option value="Site internet">Site internet</option>
+            <option value="Réservation en ligne">Réservation en ligne</option>
+            <option value="Site + réservation">Site + réservation</option>
             <option value="E-commerce">E-commerce</option>
-            <option value="Application métier">Application métier</option>
-            <option value="Tableau de bord">Tableau de bord</option>
+            <option value="Outil sur mesure">Outil sur mesure</option>
             <option value="Je ne sais pas encore">Je ne sais pas encore</option>
           </select>
         </div>
         <div class="field">
           <label>VOTRE BESOIN</label>
-          <textarea name="besoin" placeholder="Décrivez ce que vous cherchez à améliorer ou à créer..."></textarea>
+          <textarea name="besoin" placeholder="Décrivez simplement votre activité et ce que vous aimeriez mettre en place."></textarea>
         </div>
         <div class="field consent-field">
           <label class="consent-label">
@@ -1824,6 +1912,31 @@
 
 <footer>
   <div class="wrap">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <img src="logo-nav.png" alt="Logo PitaIA" width="24" height="24">
+          Pita<span style="color:var(--pink);">IA</span>
+        </div>
+        <p class="footer-tagline">Solutions numériques sur mesure à La Réunion.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#svc-vitrine">Site internet</a></li>
+          <li><a href="#reservation">Réservation en ligne</a></li>
+          <li><a href="#svc-ecommerce">E-commerce</a></li>
+          <li><a href="#svc-sur-mesure">Solutions sur mesure</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Pita RDV</h4>
+        <ul>
+          <li><a href="prise-de-rendez-vous-en-ligne-reunion.html">Découvrir</a></li>
+          <li><a href="#reservation">Démonstration</a></li>
+        </ul>
+      </div>
+    </div>
     <div class="footer-cta-line">
       <span>Un projet en tête ? Parlons-en.</span>
       <a href="#contact">Parler de mon projet →</a>
